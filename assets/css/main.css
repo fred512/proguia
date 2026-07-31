@@ -141,6 +141,8 @@ h1, h2, h3 { margin: 0; letter-spacing: -.05em; }
 .form-field { display: grid; gap: 7px; color: var(--ink-soft); font-size: 13px; font-weight: 800; }
 .form-field input { min-width: 0; width: 100%; padding: 12px 13px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; outline: 0; }
 .form-field input:focus { border-color: var(--lime-deep); box-shadow: 0 0 0 3px #d9f55a35; }
+.theme-dark .form-field input[type='date'] { color-scheme: dark; }
+.theme-dark .form-field input[type='date']::-webkit-calendar-picker-indicator { cursor: pointer; filter: invert(1) brightness(1.8); opacity: .95; }
 .form-alert { color: #bc452c; margin: 0; font-weight: 700; font-size: 12px; }
 .package-list { display: grid; gap: 10px; }
 .package-card { width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 5px 15px; padding: 16px; color: var(--ink); text-align: left; background: var(--paper); border: 1px solid var(--line); border-radius: 13px; }
