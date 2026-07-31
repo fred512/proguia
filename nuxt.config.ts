@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['@vite-pwa/nuxt'],
   nitro: {
     prerender: {
-      routes: ['/', '/painel']
+      routes: ['/', '/painel', '/painel/perfil']
     }
   },
   pwa: {

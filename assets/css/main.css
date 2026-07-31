@@ -189,6 +189,18 @@ h1, h2, h3 { margin: 0; letter-spacing: -.05em; }
 .status { justify-self: start; padding: 5px 8px; background: #ffe8a8; color: #5d4600; border-radius: 99px; font-size: 11px; font-weight: 900; }
 .status.contato { color: #094c60; background: #b9edf5; }.status.confirmada { color: #176036; background: #c6f0b7; }
 
+.profile-admin-content { max-width: 1040px; }
+.profile-editor { display: grid; grid-template-columns: 285px 1fr; gap: 18px; margin-top: 42px; align-items: start; }
+.profile-summary, .profile-form-card { background: var(--panel-solid); border: 1px solid var(--line); border-radius: 17px; }
+.profile-summary { padding: 18px; position: sticky; top: 30px; }
+.profile-photo { height: 246px; overflow: hidden; border-radius: 12px 72px 12px 12px; background: var(--paper-strong); }.profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.profile-state { display: inline-block; margin: 16px 0 8px; padding: 6px 8px; color: #1a291e; background: var(--lime); border-radius: 99px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+.profile-summary h2, .profile-form-heading h2 { font-family: 'DM Serif Display', Georgia, serif; letter-spacing: -.04em; }.profile-summary h2 { font-size: 28px; line-height: .98; }.profile-summary > p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+.profile-summary-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }.profile-summary-tags span { padding: 6px 8px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--line); border-radius: 99px; font-size: 10px; font-weight: 800; }
+.profile-form-card { padding: 27px; }.profile-form-heading { display: flex; align-items: end; justify-content: space-between; gap: 15px; padding-bottom: 21px; border-bottom: 1px solid var(--line); }.profile-form-heading .eyebrow { margin-bottom: 8px; }.profile-form-heading h2 { font-size: 35px; line-height: .92; }.profile-form-heading > span { color: var(--muted); font-size: 11px; font-weight: 800; }
+.profile-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 13px; margin-top: 22px; }.form-field-wide { grid-column: 1 / -1; }.form-field textarea { width: 100%; resize: vertical; padding: 12px 13px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; outline: 0; line-height: 1.5; }.form-field textarea:focus { border-color: var(--lime-deep); box-shadow: 0 0 0 3px #d9f55a35; }.form-field small { color: var(--muted); font-size: 10px; font-weight: 500; text-align: right; }
+.profile-form-actions { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--line); }.profile-form-actions p { max-width: 365px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }.profile-saved { margin: 14px 0 0; color: #216b3c; font-size: 13px; font-weight: 800; }
+
 .pwa-prompt { position: fixed; z-index: 40; right: 22px; bottom: 22px; width: min(410px, calc(100vw - 32px)); display: grid; grid-template-columns: 38px 1fr auto; gap: 11px; align-items: start; padding: 14px; color: #eff5f1; background: #15221ef7; border: 1px solid #d9f55a78; border-radius: 14px; box-shadow: 0 18px 45px #08130f55; }
 .pwa-prompt-icon { width: 36px; height: 36px; display: grid; place-items: center; color: #16201b; background: var(--lime); border-radius: 10px; font-size: 18px; }
 .pwa-prompt strong { display: block; font-size: 13px; }.pwa-prompt p { margin: 4px 0 0; color: #c5d4ce; font-size: 12px; line-height: 1.35; }
@@ -202,6 +214,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -.05em; }
   .route-grid { grid-template-columns: 1fr; max-width: 550px; }.route-card { display: grid; grid-template-columns: .9fr 1.1fr; }.route-card-body { padding: 18px; }.route-photo, .route-photo > img { height: 100%; min-height: 240px; }
   .how-section, .guide-layout { grid-template-columns: 1fr; gap: 38px; }.guide-image-wrap { height: 450px; max-width: 550px; }
   .admin-page { grid-template-columns: 1fr; }.admin-sidebar { padding: 18px; }.admin-sidebar .brand { margin: 0 0 14px; }.admin-sidebar nav { grid-template-columns: repeat(3, 1fr); }.admin-sidebar > p { display: none; }
+  .profile-editor { grid-template-columns: 220px 1fr; }.profile-summary { top: 18px; }.profile-photo { height: 200px; }
 }
 
 @media (max-width: 620px) {
@@ -213,5 +226,6 @@ h1, h2, h3 { margin: 0; letter-spacing: -.05em; }
   .guide-section { padding: 65px 0; }.guide-image-wrap { height: 420px; border-radius: 18px 110px 18px 18px; }.guide-copy blockquote { font-size: 25px; }.footer-row { flex-wrap: wrap; gap: 12px; }
   .dialog-backdrop { padding: 12px; }.gallery-dialog, .booking-dialog { max-height: calc(100vh - 24px); padding: 21px 16px; border-radius: 15px; }.dialog-header h2 { font-size: 33px; }.gallery-grid { grid-template-columns: 1fr 1fr; gap: 8px; }.gallery-grid figure { height: 140px; }.field-row { grid-template-columns: 1fr; }.booking-summary { display: grid; }.booking-summary strong { text-align: left; }
   .admin-content { width: min(100% - 28px, 550px); padding: 34px 0; }.admin-title-row h1 { font-size: 45px; }.metric-grid { grid-template-columns: 1fr; margin: 30px 0; }.request-section { padding: 16px; }.requests-table { overflow-x: auto; }.table-head, .table-row { min-width: 650px; }.admin-sidebar nav { grid-template-columns: 1fr; }
+  .profile-editor { grid-template-columns: 1fr; margin-top: 28px; }.profile-summary { position: static; display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; align-items: center; }.profile-photo { grid-row: span 3; height: 112px; border-radius: 11px 38px 11px 11px; }.profile-state { margin: 0 0 7px; justify-self: start; }.profile-summary h2 { font-size: 25px; }.profile-summary-tags { grid-column: 1 / -1; margin-top: 12px; }.profile-form-card { padding: 19px 16px; }.profile-form-heading { align-items: start; }.profile-form-heading h2 { font-size: 31px; }.profile-fields { grid-template-columns: 1fr; }.form-field-wide { grid-column: auto; }.profile-form-actions { align-items: stretch; flex-direction: column; }.profile-form-actions .button { width: 100%; }
   .pwa-prompt { right: 14px; bottom: 14px; grid-template-columns: 34px 1fr auto; }.pwa-prompt-icon { width: 32px; height: 32px; }.pwa-prompt-actions { gap: 4px; }
 }

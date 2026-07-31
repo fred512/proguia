@@ -13,6 +13,7 @@ const requests = [
       <nav aria-label="Navegação do painel">
         <NuxtLink class="active" to="/painel">Visão geral</NuxtLink>
         <a href="#solicitacoes">Solicitações</a>
+        <NuxtLink to="/painel/perfil">Dados da guia</NuxtLink>
         <NuxtLink to="/">Ver site público</NuxtLink>
       </nav>
       <p>Ambiente inicial de Marcia Marianno Machado.</p>
