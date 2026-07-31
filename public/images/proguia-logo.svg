@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">ProGuia</title>
+  <desc id="desc">Ícone de bússola e caminho</desc>
+  <circle cx="32" cy="32" r="27" fill="#cfd8dc"/>
+  <path d="M20 42c8-2 13-7 15-15 1-5 4-9 9-12-2 8-6 13-12 17-4 3-7 6-8 10z" fill="#26332f"/>
+  <path d="M21 44c5-8 11-10 18-13 5-2 8-6 10-12-1 9-5 15-12 19-5 3-10 5-16 6z" fill="#df704e" opacity=".9"/>
+  <circle cx="35" cy="29" r="4" fill="#d5ec74" stroke="#26332f" stroke-width="2"/>
+</svg>
