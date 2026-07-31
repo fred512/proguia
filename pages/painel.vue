@@ -4,17 +4,23 @@ const requests = [
   { name: 'João Ribeiro', route: 'Compras sem pressa', date: '02 ago', phone: '(45) 98888-1200', value: 'R$ 640', status: 'Contato' },
   { name: 'Luciana Mello', route: 'Gigantes da fronteira', date: '21 ago', phone: '(41) 97777-4570', value: 'R$ 920', status: 'Confirmada' }
 ]
+
+const menuOpen = ref(false)
+const closeMenu = () => { menuOpen.value = false }
 </script>
 
 <template>
   <main class="admin-page">
     <aside class="admin-sidebar">
-      <BrandLogo />
-      <nav aria-label="Navegação do painel">
-        <NuxtLink class="active" to="/painel">Visão geral</NuxtLink>
-        <a href="#solicitacoes">Solicitações</a>
-        <NuxtLink to="/painel/perfil">Dados da guia</NuxtLink>
-        <NuxtLink to="/">Ver site público</NuxtLink>
+      <div class="admin-sidebar-top">
+        <BrandLogo />
+        <button class="admin-menu-trigger" type="button" aria-controls="admin-menu" :aria-expanded="menuOpen" aria-label="Abrir menu do painel" @click="menuOpen = !menuOpen"><span /><span /><span /></button>
+      </div>
+      <nav id="admin-menu" :class="{ 'is-open': menuOpen }" aria-label="Navegação do painel">
+        <NuxtLink class="active" to="/painel" @click="closeMenu">Visão geral</NuxtLink>
+        <a href="#solicitacoes" @click="closeMenu">Solicitações</a>
+        <NuxtLink to="/painel/perfil" @click="closeMenu">Dados da guia</NuxtLink>
+        <NuxtLink to="/" @click="closeMenu">Ver site público</NuxtLink>
       </nav>
       <p>Ambiente inicial de Marcia Marianno Machado.</p>
     </aside>

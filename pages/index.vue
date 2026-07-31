@@ -57,9 +57,11 @@ const galleryRoute = ref<TravelRoute | null>(null)
 const bookingOpen = ref(false)
 const bookingStep = ref(1)
 const booking = reactive({ days: 2, people: 2, date: '', package: 'Essencial', name: '', email: '', phone: '' })
+const mobileMenuOpen = ref(false)
 
-const scrollToRoutes = () => document.querySelector('#roteiros')?.scrollIntoView({ behavior: 'smooth' })
-const scrollToGuide = () => document.querySelector('#guia')?.scrollIntoView({ behavior: 'smooth' })
+const closeMobileMenu = () => { mobileMenuOpen.value = false }
+const scrollToRoutes = () => { closeMobileMenu(); document.querySelector('#roteiros')?.scrollIntoView({ behavior: 'smooth' }) }
+const scrollToGuide = () => { closeMobileMenu(); document.querySelector('#guia')?.scrollIntoView({ behavior: 'smooth' }) }
 const openBooking = (route: TravelRoute) => {
   selectedRoute.value = route
   galleryRoute.value = null
@@ -81,10 +83,21 @@ const submitRequest = () => { bookingStep.value = 4 }
       <div class="page-width nav-bar">
         <BrandLogo />
         <nav class="main-nav" aria-label="Navegação principal">
-          <button type="button" @click="scrollToRoutes">Roteiros</button>
-          <button type="button" @click="scrollToGuide">A guia</button>
-          <NuxtLink to="/painel">Painel da guia</NuxtLink>
-          <ThemeToggle />
+          <div class="desktop-nav">
+            <button type="button" @click="scrollToRoutes">Roteiros</button>
+            <button type="button" @click="scrollToGuide">A guia</button>
+            <NuxtLink to="/painel">Painel da guia</NuxtLink>
+            <ThemeToggle />
+          </div>
+          <div class="mobile-nav-actions">
+            <ThemeToggle />
+            <button class="mobile-menu-trigger" type="button" aria-controls="mobile-site-menu" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu" @click="mobileMenuOpen = !mobileMenuOpen"><span /><span /><span /></button>
+          </div>
+          <div id="mobile-site-menu" class="mobile-site-menu" :class="{ 'is-open': mobileMenuOpen }">
+            <button type="button" @click="scrollToRoutes">Roteiros</button>
+            <button type="button" @click="scrollToGuide">Conhecer a guia</button>
+            <NuxtLink to="/painel" @click="closeMobileMenu">Painel da guia <span aria-hidden="true">→</span></NuxtLink>
+          </div>
         </nav>
       </div>
     </header>

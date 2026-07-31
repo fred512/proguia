@@ -10,22 +10,28 @@ const profile = reactive({
 })
 
 const saved = ref(false)
+const menuOpen = ref(false)
 
 const saveProfile = () => {
   saved.value = true
   window.setTimeout(() => { saved.value = false }, 3500)
 }
+
+const closeMenu = () => { menuOpen.value = false }
 </script>
 
 <template>
   <main class="admin-page">
     <aside class="admin-sidebar">
-      <BrandLogo />
-      <nav aria-label="Navegação do painel">
-        <NuxtLink to="/painel">Visão geral</NuxtLink>
-        <NuxtLink to="/painel#solicitacoes">Solicitações</NuxtLink>
-        <NuxtLink class="active" to="/painel/perfil">Dados da guia</NuxtLink>
-        <NuxtLink to="/">Ver site público</NuxtLink>
+      <div class="admin-sidebar-top">
+        <BrandLogo />
+        <button class="admin-menu-trigger" type="button" aria-controls="admin-menu" :aria-expanded="menuOpen" aria-label="Abrir menu do painel" @click="menuOpen = !menuOpen"><span /><span /><span /></button>
+      </div>
+      <nav id="admin-menu" :class="{ 'is-open': menuOpen }" aria-label="Navegação do painel">
+        <NuxtLink to="/painel" @click="closeMenu">Visão geral</NuxtLink>
+        <NuxtLink to="/painel#solicitacoes" @click="closeMenu">Solicitações</NuxtLink>
+        <NuxtLink class="active" to="/painel/perfil" @click="closeMenu">Dados da guia</NuxtLink>
+        <NuxtLink to="/" @click="closeMenu">Ver site público</NuxtLink>
       </nav>
       <p>Ambiente inicial de Marcia Marianno Machado.</p>
     </aside>
