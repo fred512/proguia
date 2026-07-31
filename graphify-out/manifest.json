@@ -1,0 +1,102 @@
+{
+  "app.vue": {
+    "mtime": 1785463428.7413158,
+    "ast_hash": "44972364529f475071f2cbe2e6830b51",
+    "semantic_hash": "44972364529f475071f2cbe2e6830b51"
+  },
+  "components/BrandLogo.vue": {
+    "mtime": 1785462564.6233485,
+    "ast_hash": "c00117ef85b516680458b7703c777a4e",
+    "semantic_hash": "c00117ef85b516680458b7703c777a4e"
+  },
+  "components/PwaInstallPrompt.vue": {
+    "mtime": 1785463021.7189076,
+    "ast_hash": "76771ddfbc4756c2128d9cd4f6a7ac24",
+    "semantic_hash": "76771ddfbc4756c2128d9cd4f6a7ac24"
+  },
+  "components/RouteCard.vue": {
+    "mtime": 1785462564.6233485,
+    "ast_hash": "7b10b8af39cb0f3503e47a38c1ccaebd",
+    "semantic_hash": "7b10b8af39cb0f3503e47a38c1ccaebd"
+  },
+  "components/RouteGallery.vue": {
+    "mtime": 1785462564.6233485,
+    "ast_hash": "64ec5b29713c258ac43a2084cdccaae5",
+    "semantic_hash": "64ec5b29713c258ac43a2084cdccaae5"
+  },
+  "components/ThemeToggle.vue": {
+    "mtime": 1785463428.7413158,
+    "ast_hash": "8ce0fa0326096fa9949e46a0349109c5",
+    "semantic_hash": "8ce0fa0326096fa9949e46a0349109c5"
+  },
+  "composables/useTheme.ts": {
+    "mtime": 1785466068.8930407,
+    "ast_hash": "3f6ea3c5e5227802e99993bf8c34f5c2",
+    "semantic_hash": "3f6ea3c5e5227802e99993bf8c34f5c2"
+  },
+  "nuxt.config.ts": {
+    "mtime": 1785464898.11822,
+    "ast_hash": "9001f1c697f00fcfef8f59a24edf0090",
+    "semantic_hash": "9001f1c697f00fcfef8f59a24edf0090"
+  },
+  "package.json": {
+    "mtime": 1785463021.7174437,
+    "ast_hash": "d415fdf21df2a2d2cdaf218e3951d450",
+    "semantic_hash": "d415fdf21df2a2d2cdaf218e3951d450"
+  },
+  "pages/index.vue": {
+    "mtime": 1785465698.0453756,
+    "ast_hash": "8641eee0ac9689111ba88b5def3d5ca4",
+    "semantic_hash": "8641eee0ac9689111ba88b5def3d5ca4"
+  },
+  "pages/painel/index.vue": {
+    "mtime": 1785466014.8211122,
+    "ast_hash": "820c3b01b6758aaf7b240b827e1833f6",
+    "semantic_hash": "820c3b01b6758aaf7b240b827e1833f6"
+  },
+  "pages/painel/perfil.vue": {
+    "mtime": 1785465712.4280727,
+    "ast_hash": "0a9543f7fb82c59e46d0aaf82190f986",
+    "semantic_hash": "0a9543f7fb82c59e46d0aaf82190f986"
+  },
+  "pnpm-workspace.yaml": {
+    "mtime": 1785462969.8377247,
+    "ast_hash": "b8f761ad17f24a86297819d29079ee79",
+    "semantic_hash": "b8f761ad17f24a86297819d29079ee79"
+  },
+  "public/images/apple-touch-icon-180x180.png": {
+    "mtime": 1785463026.6886015,
+    "ast_hash": "44838439dd5172d2ee602fd55a06544a",
+    "semantic_hash": "44838439dd5172d2ee602fd55a06544a"
+  },
+  "public/images/marcia-marianno-machado.jpg": {
+    "mtime": 1785458934.116873,
+    "ast_hash": "ce4c6b768aead8878f2c1ec56f16ce85",
+    "semantic_hash": "ce4c6b768aead8878f2c1ec56f16ce85"
+  },
+  "public/images/maskable-icon-512x512.png": {
+    "mtime": 1785463026.6886015,
+    "ast_hash": "a615ac89cbcef9e5447c7960823645ea",
+    "semantic_hash": "a615ac89cbcef9e5447c7960823645ea"
+  },
+  "public/images/proguia-logo.svg": {
+    "mtime": 1785461542.4179535,
+    "ast_hash": "fb9b1d057920030618d4f5a0b6c5b3eb",
+    "semantic_hash": "fb9b1d057920030618d4f5a0b6c5b3eb"
+  },
+  "public/images/pwa-192x192.png": {
+    "mtime": 1785463026.6356528,
+    "ast_hash": "56d52f05b3332993c616117b752d863b",
+    "semantic_hash": "56d52f05b3332993c616117b752d863b"
+  },
+  "public/images/pwa-512x512.png": {
+    "mtime": 1785463026.651416,
+    "ast_hash": "dc0a08e4efd623d4ff083079a94da529",
+    "semantic_hash": "dc0a08e4efd623d4ff083079a94da529"
+  },
+  "public/images/pwa-64x64.png": {
+    "mtime": 1785463026.6356528,
+    "ast_hash": "d2bc8787f4ca3bb46d91237fd98ce570",
+    "semantic_hash": "d2bc8787f4ca3bb46d91237fd98ce570"
+  }
+}
