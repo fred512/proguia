@@ -21,8 +21,8 @@ const dismissInstall = async () => {
     <div class="pwa-prompt-icon">✦</div>
     <div>
       <strong v-if="$pwa.needRefresh">Uma nova versão está pronta.</strong>
-      <strong v-else-if="$pwa.offlineReady">ProGuia pronto para usar offline.</strong>
-      <strong v-else>Leve o ProGuia no seu celular.</strong>
+      <strong v-else-if="$pwa.offlineReady">PersonalTravel pronto para usar offline.</strong>
+      <strong v-else>Leve o PersonalTravel no seu celular.</strong>
       <p v-if="$pwa.needRefresh">Atualize para receber a versão mais recente.</p>
       <p v-else-if="$pwa.offlineReady">A interface principal agora funciona sem internet.</p>
       <p v-else>Instale o app para acesso rápido durante a viagem.</p>

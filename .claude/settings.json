@@ -1,4 +1,23 @@
 {
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"c:\\\\Users\\\\fredb\\\\OneDrive\\\\Documentos\\\\Projetos\\\\ProGuia\"; $env:COREPACK_ENABLE_DOWNLOAD_PROMPT=0; corepack pnpm dev)",
+      "Bash(rtk curl *)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/painel/entrar\" -UseBasicParsing -TimeoutSec 45; \"HTTP $\\($r.StatusCode\\)\"; if \\($r.Content -match 'Receber link de acesso'\\) { \"botao magic link: OK\" }; if \\($r.Content -match 'Entrar com Google'\\) { \"botao google: OK\" } } catch { \"ERRO: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(cd \"c:\\\\Users\\\\fredb\\\\OneDrive\\\\Documentos\\\\Projetos\\\\ProGuia\"; $env:COREPACK_ENABLE_DOWNLOAD_PROMPT=0; corepack pnpm generate 2>&1 | Select-Object -Last 22)",
+      "PowerShell(foreach \\($p in @\\('/painel/admin','/painel/entrar','/painel/perfil'\\)\\) { try { $r = Invoke-WebRequest -Uri \"http://localhost:3000$p\" -UseBasicParsing -TimeoutSec 60; \"$p -> HTTP $\\($r.StatusCode\\)\" } catch { \"$p -> ERRO: $\\($_.Exception.Message\\)\" } })",
+      "Bash(rtk grep *)",
+      "Bash(curl -s https://xzzdwlnncfibmtdbxrcp.supabase.co/storage/v1/object/public/guide-photos/inexistente.jpg)",
+      "Bash(curl -s https://xzzdwlnncfibmtdbxrcp.supabase.co/storage/v1/object/public/bucket-que-nao-existe/x.jpg)",
+      "PowerShell(foreach \\($p in @\\('/painel','/painel/roteiros','/painel/perfil','/painel/admin','/painel/entrar'\\)\\) { try { $r = Invoke-WebRequest -Uri \"http://localhost:3000$p\" -UseBasicParsing -TimeoutSec 90; \"$p -> HTTP $\\($r.StatusCode\\)\" } catch { \"$p -> ERRO: $\\($_.Exception.Message\\)\" } })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/painel\" -UseBasicParsing -TimeoutSec 120; \"HTTP $\\($r.StatusCode\\)\" } catch { \"ERRO: $\\($_.Exception.Message\\)\" })",
+      "Bash(python -c ' *)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/painel/roteiros\" -UseBasicParsing -TimeoutSec 120; \"HTTP $\\($r.StatusCode\\)\"; if \\($r.Content -match 'Wikimedia Commons'\\) { \"busca Commons: presente\" } } catch { \"ERRO: $\\($_.Exception.Message\\)\" })",
+      "Bash(graphify update *)",
+      "Bash(rtk pip *)",
+      "Bash(\"C:/Users/fredb/AppData/Local/uv/cache/archive-v0/PJFTtvLJD5rSC64h/Scripts/python.exe\" -m pip install tree-sitter-sql)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {

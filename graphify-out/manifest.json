@@ -5,14 +5,14 @@
     "semantic_hash": "44972364529f475071f2cbe2e6830b51"
   },
   "components/BrandLogo.vue": {
-    "mtime": 1785462564.6233485,
-    "ast_hash": "c00117ef85b516680458b7703c777a4e",
-    "semantic_hash": "c00117ef85b516680458b7703c777a4e"
+    "mtime": 1785636205.9736497,
+    "ast_hash": "d418d0540a861219f728def37d8316ce",
+    "semantic_hash": ""
   },
   "components/PwaInstallPrompt.vue": {
-    "mtime": 1785463021.7189076,
-    "ast_hash": "76771ddfbc4756c2128d9cd4f6a7ac24",
-    "semantic_hash": "76771ddfbc4756c2128d9cd4f6a7ac24"
+    "mtime": 1785636207.942994,
+    "ast_hash": "22110e67955d55b9c151228e17040c5d",
+    "semantic_hash": ""
   },
   "components/RouteCard.vue": {
     "mtime": 1785462564.6233485,
@@ -35,14 +35,14 @@
     "semantic_hash": "3f6ea3c5e5227802e99993bf8c34f5c2"
   },
   "nuxt.config.ts": {
-    "mtime": 1785464898.11822,
-    "ast_hash": "9001f1c697f00fcfef8f59a24edf0090",
-    "semantic_hash": "9001f1c697f00fcfef8f59a24edf0090"
+    "mtime": 1785636491.725249,
+    "ast_hash": "0fc3426bc66919f809f5ee2d2bf15498",
+    "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785463021.7174437,
-    "ast_hash": "d415fdf21df2a2d2cdaf218e3951d450",
-    "semantic_hash": "d415fdf21df2a2d2cdaf218e3951d450"
+    "mtime": 1785630780.349355,
+    "ast_hash": "7d29e0bdeac8a82ebc6188d89e0d2e2b",
+    "semantic_hash": ""
   },
   "pages/index.vue": {
     "mtime": 1785465698.0453756,
@@ -50,14 +50,14 @@
     "semantic_hash": "8641eee0ac9689111ba88b5def3d5ca4"
   },
   "pages/painel/index.vue": {
-    "mtime": 1785466014.8211122,
-    "ast_hash": "820c3b01b6758aaf7b240b827e1833f6",
-    "semantic_hash": "820c3b01b6758aaf7b240b827e1833f6"
+    "mtime": 1785636529.3103878,
+    "ast_hash": "96a208eea5f721da1d4c9541257531c3",
+    "semantic_hash": ""
   },
   "pages/painel/perfil.vue": {
-    "mtime": 1785465712.4280727,
-    "ast_hash": "0a9543f7fb82c59e46d0aaf82190f986",
-    "semantic_hash": "0a9543f7fb82c59e46d0aaf82190f986"
+    "mtime": 1785636542.2472825,
+    "ast_hash": "209714ec3295535e223ab143dd947631",
+    "semantic_hash": ""
   },
   "pnpm-workspace.yaml": {
     "mtime": 1785462969.8377247,
@@ -80,9 +80,9 @@
     "semantic_hash": "a615ac89cbcef9e5447c7960823645ea"
   },
   "public/images/proguia-logo.svg": {
-    "mtime": 1785461542.4179535,
-    "ast_hash": "fb9b1d057920030618d4f5a0b6c5b3eb",
-    "semantic_hash": "fb9b1d057920030618d4f5a0b6c5b3eb"
+    "mtime": 1785636231.025679,
+    "ast_hash": "d0dc76972a17521e3f08c47039a187a7",
+    "semantic_hash": ""
   },
   "public/images/pwa-192x192.png": {
     "mtime": 1785463026.6356528,
@@ -98,5 +98,120 @@
     "mtime": 1785463026.6356528,
     "ast_hash": "d2bc8787f4ca3bb46d91237fd98ce570",
     "semantic_hash": "d2bc8787f4ca3bb46d91237fd98ce570"
+  },
+  ".claude/settings.json": {
+    "mtime": 1785639989.7565374,
+    "ast_hash": "06c073b6204d357c46ecf5fd2c1d90cf",
+    "semantic_hash": ""
+  },
+  "composables/useAuth.ts": {
+    "mtime": 1785634627.6739354,
+    "ast_hash": "25057032bbbeda0901003798298466ea",
+    "semantic_hash": ""
+  },
+  "composables/useCommonsSearch.ts": {
+    "mtime": 1785638772.6664789,
+    "ast_hash": "84132a1e4378e7c885be949b6f702912",
+    "semantic_hash": ""
+  },
+  "composables/useImageUpload.ts": {
+    "mtime": 1785636429.7280667,
+    "ast_hash": "b8e3cfcb8bb885d0a71fd23ff10ee097",
+    "semantic_hash": ""
+  },
+  "composables/useSupabase.ts": {
+    "mtime": 1785630810.2144349,
+    "ast_hash": "67f39a582d344cb1afe3985dee085bd2",
+    "semantic_hash": ""
+  },
+  "middleware/admin.ts": {
+    "mtime": 1785634726.900047,
+    "ast_hash": "24e11ffc039988d5b7bc1bf02f529c2b",
+    "semantic_hash": ""
+  },
+  "middleware/auth.ts": {
+    "mtime": 1785634632.2397165,
+    "ast_hash": "8665e3fbd197ddf6b55b83f73f8f1db5",
+    "semantic_hash": ""
+  },
+  "pages/painel/admin.vue": {
+    "mtime": 1785634768.5000274,
+    "ast_hash": "420eace2b314437d8d8fecd179793c9d",
+    "semantic_hash": ""
+  },
+  "pages/painel/entrar.vue": {
+    "mtime": 1785636228.097282,
+    "ast_hash": "2a568387263f1e30b5982a121fc73546",
+    "semantic_hash": ""
+  },
+  "pages/painel/roteiros.vue": {
+    "mtime": 1785638819.7222023,
+    "ast_hash": "51dec44f265ca34644c44afe2448a43f",
+    "semantic_hash": ""
+  },
+  "supabase/functions/notify-guide/index.ts": {
+    "mtime": 1785636219.844648,
+    "ast_hash": "7fcdd7d4948ad797640b80444d7267f6",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801100000_create_guides.sql": {
+    "mtime": 1785627433.7068124,
+    "ast_hash": "40f2b2480faaee52caa1da52ce04c26b",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801100100_create_routes.sql": {
+    "mtime": 1785627434.757625,
+    "ast_hash": "44df78aff84541eefc8d3c2d03bd94e7",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801100150_create_packages.sql": {
+    "mtime": 1785627490.6117926,
+    "ast_hash": "a47b3d4c82bff3c4c1126564902920ae",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801100200_create_requests.sql": {
+    "mtime": 1785627491.8417268,
+    "ast_hash": "5f491e762bb4d0ee23be6b76c95eca5a",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801100300_create_request_rpc.sql": {
+    "mtime": 1785627507.2177954,
+    "ast_hash": "20281932028a4e38d07e668b64c26a1d",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801100400_notify_guide_cron.sql": {
+    "mtime": 1785629005.1663427,
+    "ast_hash": "a44277d05ac3e1a1aa9f4e39c2398673",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801200000_guide_onboarding.sql": {
+    "mtime": 1785634038.4947627,
+    "ast_hash": "b5f57fcc1d6bfa7c34b4ed50d2247422",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801210000_guide_photos_storage.sql": {
+    "mtime": 1785634549.0850637,
+    "ast_hash": "2702efe421cc96baf9534803bfc08a17",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801220000_admin_and_invites.sql": {
+    "mtime": 1785634598.353505,
+    "ast_hash": "a8c8dbd1775050666f359bfe8101f9af",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260801230000_host_slug.sql": {
+    "mtime": 1785636402.560995,
+    "ast_hash": "9b77796a87e1548eabbf5e23e941538a",
+    "semantic_hash": ""
+  },
+  "supabase/seed/perfil-teste.sql": {
+    "mtime": 1785639085.760446,
+    "ast_hash": "0c7cc97927898187ef24ed686d6f1d3e",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1785639923.3892565,
+    "ast_hash": "187a775c64ef9725370000892f3a0681",
+    "semantic_hash": ""
   }
 }

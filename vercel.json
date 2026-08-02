@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm generate",
+  "outputDirectory": ".output/public",
+  "rewrites": [
+    { "source": "/anfitriao/:slug", "destination": "/200.html" }
+  ]
+}

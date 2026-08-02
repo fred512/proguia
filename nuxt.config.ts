@@ -5,15 +5,30 @@ export default defineNuxtConfig({
   modules: ['@vite-pwa/nuxt'],
   nitro: {
     prerender: {
-      routes: ['/', '/painel', '/painel/perfil']
+      routes: [
+        '/',
+        '/anfitrioes',
+        '/quero-ser-anfitriao',
+        '/painel',
+        '/painel/perfil',
+        '/painel/entrar',
+        '/painel/admin',
+        '/painel/roteiros'
+      ]
+    }
+  },
+  runtimeConfig: {
+    public: {
+      supabaseUrl: '',
+      supabasePublishableKey: ''
     }
   },
   pwa: {
     registerType: 'autoUpdate',
     includeAssets: ['images/favicon.ico', 'images/apple-touch-icon-180x180.png', 'images/proguia-logo.svg'],
     manifest: {
-      name: 'ProGuia — Paraguai do seu jeito',
-      short_name: 'ProGuia',
+      name: 'PersonalTravel — Paraguai do seu jeito',
+      short_name: 'PersonalTravel',
       description: 'Experiências privadas na Tríplice Fronteira, planejadas para o seu grupo.',
       theme_color: '#15221e',
       background_color: '#15221e',
@@ -55,7 +70,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'pt-BR' },
-      title: 'ProGuia — Paraguai do seu jeito',
+      title: 'PersonalTravel — Paraguai do seu jeito',
       meta: [
         { name: 'description', content: 'Experiências privadas na Tríplice Fronteira, planejadas para o seu grupo.' },
         { name: 'theme-color', content: '#15221e' }

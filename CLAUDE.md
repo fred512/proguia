@@ -1,123 +1,187 @@
-# ProGuia
+# PersonalTravel
 
-> PWA de roteiros privados pela Tríplice Fronteira. O cliente escolhe uma inspiração de roteiro, informa dias e tamanho do grupo e envia uma solicitação para a guia.
+> PWA de roteiros privados pela Tríplice Fronteira. O visitante escolhe um anfitrião, vê seus roteiros e envia uma solicitação. O anfitrião gerencia perfil, roteiros e pedidos num painel próprio.
 
-## Objetivo atual
+A pasta e o repositório ainda se chamam `ProGuia`; o produto se chama **PersonalTravel**.
 
-O projeto é um protótipo funcional de uma operação inicialmente conduzida por uma única guia: **Marcia Marianno Machado**. A estrutura deve permitir uma evolução futura para uma plataforma em que outros guias tenham seu próprio painel, perfil e roteiros.
+## Vocabulário — importante
 
-No estágio atual, não há transporte incluso, autenticação, banco de dados, envio real de e-mail nem comunicação interna. Os dados e as solicitações demonstrados no painel são exemplos locais.
+Nunca chame as pessoas cadastradas de **"guia"** na interface. Use **anfitrião / anfitriã**.
 
-## Experiência do cliente
+A Lei 8.623/1993 regulamenta "Guia de Turismo" como profissão, exigindo curso técnico e registro no Cadastur. A maioria dos cadastrados não tem essa formação, então a palavra cria exposição jurídica. Foi o motivo da troca de nome do produto.
 
-Fluxo principal:
+No banco os identificadores continuam em inglês (`guides`, `guide_id`, `guide-photos`, `redeem_guide_invite`). Isso é intencional: identificador interno não é alegação pública. **Não renomeie o schema** por causa disso.
 
-1. Acessar a página inicial e conhecer a guia.
-2. Escolher uma inspiração de roteiro e consultar sua galeria de fotos.
-3. Informar data, quantidade de dias e pessoas do grupo.
-4. Escolher um pacote (Essencial, Conforto ou Completo).
-5. Informar nome, e-mail e telefone para contato.
-6. Concluir a solicitação.
+## Estado atual
 
-Os roteiros não são pacotes rígidos: funcionam como ponto de partida para uma proposta personalizada pela guia. O preço é apresentado por dia e por grupo, com limite de pessoas por roteiro.
+**Área logada: pronta e funcionando.**
+**Site público: ainda é o protótipo original, sem conexão com o banco.**
 
-## Rotas e telas
+A página `/` tem os três roteiros hardcoded em `pages/index.vue`, texto e foto da Marcia fixos, e um formulário que só avança de etapa sem gravar nada. Ela não lê do Supabase. Editar um roteiro no painel não muda nada nela.
 
-| Rota | Finalidade |
-| --- | --- |
-| `/` | Site público, roteiros, galeria, fluxo de solicitação e apresentação da Marcia. |
-| `/painel` | Visão geral do painel da guia, métricas e solicitações de exemplo. |
-| `/painel/perfil` | Formulário local para dados públicos e de contato da guia. |
+### Próxima fatia (não iniciada)
 
-**Importante:** a página inicial do painel fica em `pages/painel/index.vue`, e não em `pages/painel.vue`. Essa estrutura mantém `/painel` e `/painel/perfil` como rotas independentes no Nuxt. Não recrie `pages/painel.vue` sem implementar a hierarquia com `<NuxtPage />`.
+1. `/` vira apresentação institucional do PersonalTravel, sem perfil fixo de ninguém
+2. Listagem de anfitriões publicados, com filtro por região
+3. `/anfitriao/{slug}` com perfil e roteiros vindos do banco
+4. Formulário de pedido chamando o RPC `create_request`
+5. Exibir crédito das fotos do Commons (obrigação de licença — ver abaixo)
+6. Candidatura pública para virar anfitrião (`host_applications` + RPC, mesmo padrão de `requests`)
 
-## Arquitetura
+## Infraestrutura
 
-- **Framework:** Nuxt 3 + Vue 3 + TypeScript.
-- **Estilo:** CSS próprio em `assets/css/main.css`; não há Tailwind ou biblioteca de componentes.
-- **PWA:** `@vite-pwa/nuxt`, com manifesto, service worker e ícones em `public/images/`.
-- **Geração:** saída estática via `nuxt generate`, adequada para Vercel.
-- **Tema:** claro/escuro em `composables/useTheme.ts`. A preferência é restaurada apenas após a hidratação para evitar divergência entre HTML estático e o navegador.
-- **Fotos:** imagem da guia em `public/images/marcia-marianno-machado.jpg`; fotos dos roteiros vêm do Wikimedia Commons.
+| Serviço | Detalhe |
+|---|---|
+| Supabase | projeto `PersonalTravel`, ref `xzzdwlnncfibmtdbxrcp`, região `sa-east-1` |
+| Conta Supabase | `carlosfredericodemborges@gmail.com` — **não** a `fred512`, que tem ProTarefa e Provisiona |
+| Resend | conta `fredborges512`, chave `ProGuia` com Sending access |
+| Hospedagem | Vercel, saída estática |
 
-Arquivos mais relevantes:
+### Variáveis
 
-| Arquivo | Responsabilidade |
-| --- | --- |
-| `pages/index.vue` | Dados dos roteiros e fluxo completo de solicitação. |
-| `pages/painel/index.vue` | Dashboard administrativo de demonstração. |
-| `pages/painel/perfil.vue` | Dados editáveis da guia, ainda sem persistência. |
-| `components/RouteCard.vue` | Card de cada inspiração de roteiro. |
-| `components/RouteGallery.vue` | Galeria de fotos do roteiro. |
-| `components/ThemeToggle.vue` | Controle de modo claro/escuro. |
-| `components/PwaInstallPrompt.vue` | Convite para instalar o PWA. |
-| `nuxt.config.ts` | Configuração Nuxt e PWA. |
-
-## Design e responsividade
-
-- Identidade visual: verde profundo, cinza suave `#cfd8dc`, verde-lima de ação e coral para destaque.
-- Botões de fundo lima devem manter texto escuro (`#16201b`) para contraste.
-- O cabeçalho público é fixo e opaco.
-- Em telas pequenas, o site público usa menu de três linhas; o painel troca a barra lateral por cabeçalho compacto e menu recolhível.
-- Preserve a distinção visual entre a área pública e o painel administrativo, mas mantenha os dois temas funcionando em claro e escuro.
-
-## Desenvolvimento e validação
-
-```bash
-pnpm dev
-pnpm generate
-pnpm preview
+`.env` está no `.gitignore`:
+```
+NUXT_PUBLIC_SUPABASE_URL=https://xzzdwlnncfibmtdbxrcp.supabase.co
+NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
 ```
 
-Antes de publicar mudanças, execute `pnpm generate`. O build deve gerar as rotas `/`, `/painel` e `/painel/perfil`, além do service worker PWA.
+Nunca no `.env` nem em conversa: `service_role` / `sb_secret_...` e `RESEND_API_KEY`. Essas vão em Supabase → Edge Functions → Secrets, e no vault via `select vault.create_secret(...)`.
 
-## Deploy
+## Banco
 
-- Repositório: `fred512/proguia` no GitHub.
-- Hospedagem: Vercel, com deploy automático a partir da branch `main`.
-- Após mudanças em PWA, uma versão antiga pode permanecer em cache; em testes, use recarregamento forçado (`Ctrl + F5`) se necessário.
+Migrações em `supabase/migrations/`, todas aplicadas:
 
-## Próximos passos de produto
+| Arquivo | Conteúdo |
+|---|---|
+| `..100000_create_guides` | tabela `guides`, id = `auth.users.id` |
+| `..100100_create_routes` | `routes` por anfitrião |
+| `..100150_create_packages` | multiplicadores Essencial 1.0 / Conforto 1.2 / Completo 1.35 |
+| `..100200_create_requests` | `requests` com snapshot de título e valor |
+| `..100300_create_request_rpc` | `create_request()` |
+| `..100400_notify_guide_cron` | pg_cron chamando a Edge Function a cada minuto |
+| `..200000_guide_onboarding` | limpa defaults, grant por coluna |
+| `..210000_guide_photos_storage` | bucket `guide-photos` + policies |
+| `..220000_admin_and_invites` | `platform_admins`, `guide_invites`, RPCs |
+| `..230000_host_slug` | `slugify()` e geração automática de slug |
 
-1. Definir o canal oficial de comunicação das solicitações antes de implementar e-mail, WhatsApp ou mensagens internas.
-2. Persistir perfil da guia, roteiros, galerias e solicitações em backend.
-3. Criar autenticação e isolamento de dados para vários guias.
-4. Transformar o painel em uma operação real, com gestão de disponibilidade, limites e respostas às solicitações.
+### Decisões de segurança que não devem ser desfeitas
 
-## Guardrails para mudanças
+**`requests` não tem policy nenhuma para `anon`** — nem SELECT nem INSERT. Sem isso qualquer visitante leria nome, e-mail e telefone de todos os clientes de todos os anfitriões pela API pública. A gravação passa obrigatoriamente pelo RPC `create_request`, que é `SECURITY DEFINER`, recalcula `price_per_day × days × multiplier` no servidor e valida `people <= capacity`. Valor enviado pelo cliente é ignorado. Trava de flood: 5 pedidos por e-mail por hora.
 
-- Não apresente transporte como incluso enquanto o produto não o oferecer.
-- Não faça parecer que uma solicitação é reserva confirmada.
-- Não conecte envio de e-mail, WhatsApp, pagamentos ou banco de dados sem decisão explícita sobre o fluxo e as credenciais.
-- Preserve o telefone como campo de contato do cliente e os dados de contato da guia no painel.
-- Mantenha textos em português brasileiro e o nome completo **Marcia Marianno Machado**.
+**`published` fica fora do grant de colunas.** `revoke update on guides from authenticated` seguido de `grant update (name, email, phone, languages, region, group_limit, bio, photo_url)`. Admin também é `authenticated`, então publicar passa pelo RPC `set_guide_published()`, que verifica `is_platform_admin()`. Sem isso, curadoria seria só um combinado da interface. **Coluna nova em `guides` precisa ser adicionada a esse grant**, senão o painel não grava.
+
+**`platform_admins` tem RLS ligada e zero policies.** Nenhum cliente lê ou escreve. Só `is_platform_admin()`, que é `SECURITY DEFINER`.
+
+**Storage:** a policy exige que a primeira pasta do caminho seja o `uid` de quem envia (`{uid}/...`). Sem isso, um anfitrião sobrescreveria a foto de outro escolhendo o nome do arquivo.
+
+**Slug nunca é regerado.** O trigger só gera quando está nulo — link já compartilhado não pode quebrar quando alguém edita o nome.
+
+### Cadastro é por convite
+
+Não existe trigger criando perfil no signup. A linha em `guides` nasce só do RPC `redeem_guide_invite`.
+
+Fluxo: admin gera link em `/painel/admin` → `/painel/entrar?convite=TOKEN` → o token vai para `localStorage` → pessoa faz login (magic link ou Google) → o middleware resgata. O token fica em `localStorage` porque o login por Google sai da página e volta sem os parâmetros da URL.
+
+**Mantenha "Allow new users to sign up" ligado no Supabase.** O convidado precisa criar a conta para depois resgatar o convite.
+
+Primeiro admin foi inserido à mão:
+```sql
+insert into public.platform_admins (user_id)
+select id from auth.users where email = '...';
+```
+
+## Fotos e licenças
+
+Fotos do Commons (busca em `/painel/roteiros`) vêm sob CC BY-SA / CC BY / FAL, que **obrigam atribuição**. Por isso `gallery` guarda `{label, image, credit, license, source}` e a página pública precisa exibir o crédito.
+
+As nove fotos hardcoded em `pages/index.vue` hoje são usadas **sem crédito** — pendência real, resolvida quando o público for reescrito. Os créditos corretos estão em `supabase/seed/perfil-teste.sql`.
+
+Busque por ponto turístico, não por cidade: "Foz do Iguaçu" devolve posto de gasolina e ônibus urbano; "Itaipu Dam" e "Iguazu Falls" devolvem as fotos certas.
+
+A API do Commons aceita `origin=*`, então a busca roda no navegador. Sem servidor, sem chave, sem custo. Geração de imagem por IA foi descartada: erra lugares reais e identificáveis, o que encosta em publicidade enganosa.
+
+## E-mail (escrito, não ativado)
+
+`supabase/functions/notify-guide/index.ts` varre `requests` com `notified_at is null`, envia pelo Resend e carimba depois do envio aceito — pior caso é e-mail repetido, nunca pedido silenciado.
+
+Falta para funcionar:
+```bash
+npx supabase functions deploy notify-guide
+npx supabase secrets set RESEND_API_KEY=re_...
+```
+E no SQL Editor: `select vault.create_secret('<service_role>', 'project_service_role_key');`
+
+Limitação: com o remetente sandbox `onboarding@resend.dev`, o Resend só entrega no e-mail dono da conta. Enviar para o anfitrião exige domínio verificado e `RESEND_FROM`.
+
+## Arquivos
+
+| Arquivo | Responsabilidade |
+|---|---|
+| `pages/index.vue` | site público — **ainda hardcoded, sem banco** |
+| `pages/painel/index.vue` | solicitações reais, métricas, troca de status |
+| `pages/painel/roteiros.vue` | CRUD de roteiros, upload, busca no Commons |
+| `pages/painel/perfil.vue` | perfil do anfitrião, upload de foto |
+| `pages/painel/admin.vue` | convites, publicar anfitriões, ver tudo |
+| `pages/painel/entrar.vue` | login e resgate de convite |
+| `composables/useSupabase.ts` | cliente guardado no `nuxtApp`, não em variável de módulo |
+| `composables/useAuth.ts` | sessão, papéis, convite |
+| `composables/useImageUpload.ts` | upload para o bucket |
+| `composables/useCommonsSearch.ts` | busca no Wikimedia |
+| `middleware/auth.ts` | exige sessão e perfil ou admin |
+| `middleware/admin.ts` | exige admin |
+
+Middleware é conveniência de navegação. A barreira real é RLS.
+
+`supabase/seed/perfil-teste.sql` põe os dados da Marcia e os três roteiros na conta `tanaportaria@gmail.com`. É massa de teste, fora de `migrations/` de propósito — migração é replayada para sempre, e dado pessoal ali dentro foi erro já cometido e desfeito. A Marcia terá conta própria via convite; o arquivo tem o `delete` de limpeza no fim.
+
+## Desenvolvimento
+
+`pnpm` não está no PATH. Use `corepack`:
+
+```bash
+corepack pnpm dev
+corepack pnpm generate
+```
+
+Antes de publicar, rode `corepack pnpm generate`. Deve prerenderizar `/`, `/painel`, `/painel/entrar`, `/painel/perfil`, `/painel/admin`, `/painel/roteiros` e gerar o service worker.
+
+### Armadilhas conhecidas
+
+**Duas contas Supabase na mesma máquina.** Rode `npx supabase projects list` antes de qualquer comando que escreve. Já aconteceu de comando ir para o projeto errado.
+
+**`supabase/.temp/linked-project.json` guarda o vínculo.** Se `link` falhar com `AlreadyExists`, apague `supabase/.temp/` — o conteúdo pode estar apontando para outro projeto.
+
+**Comandos de leitura do CLI falham nesta conta:** `migration list`, `db query --linked` e `db advisors` retornam 403 `LegacyDbConfigLoginRoleStatusError`. `db push` funciona. Para verificar o banco, use o SQL Editor do dashboard.
+
+**MCP do Supabase não está autorizado.** Precisa de `/mcp` em sessão interativa.
+
+**Diagnósticos do IDE mentem depois de criar composable ou middleware.** `Cannot find name 'ref'`, `useAuth`, `definePageMeta` são auto-imports do Nuxt; os tipos em `.nuxt/` ficam velhos. Confirme com build antes de acreditar. Erro real recente: cast TypeScript dentro de expressão de template (`$event.target as HTMLSelectElement`) — não é permitido, passe o evento para a função.
+
+**O projeto vive dentro do OneDrive**, que às vezes segura handles e recria pastas recém-apagadas.
+
+**Tradução automática do navegador quebra o dashboard do Supabase.** Campos de confirmação comparam com o texto original em inglês, então o botão nunca libera. Desligue a tradução ao trabalhar lá.
+
+## Guardrails
+
+- Não apresente transporte como incluso enquanto o produto não o oferecer
+- Não faça parecer que uma solicitação é reserva confirmada
+- Preserve o telefone como campo de contato do cliente
+- Textos em português brasileiro
+- Não use "guia" para se referir aos cadastrados
+- Não exiba foto do Commons sem crédito ao autor
+- Chave secreta ou `service_role` nunca em arquivo do projeto nem em conversa
+
+## Design
+
+Verde profundo, cinza `#cfd8dc`, verde-lima de ação, coral de destaque. Botão lima tem texto escuro `#16201b`. Cabeçalho público fixo e opaco. Em tela pequena, o público usa menu de três linhas e o painel troca a barra lateral por cabeçalho recolhível. Tema claro/escuro em `composables/useTheme.ts`, restaurado só após hidratação.
+
+Atenção: `.profile-photo` em `assets/css/main.css` define `height` mas não `width`. Já quebrou uma vez ao virar `<button>`.
 
 ## Graphify
 
-O mapa de conhecimento do projeto fica em `graphify-out/`:
-
-- `graph.html`: visualização interativa.
-- `GRAPH_REPORT.md`: relatório e auditoria do grafo.
-- `graph.json`: dados do grafo para consultas.
-
-Após alterações estruturais, atualize o mapa com:
-
 ```bash
 graphify update .
+graphify query "<pergunta>"
 ```
 
-Use o mapa antes de responder questões sobre arquitetura ou relações entre arquivos:
-
-```bash
-graphify query "Como funciona o fluxo de solicitação?"
-```
-
-## graphify
-
-This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
-
-Rules:
-- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
-- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
-- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
-- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+Mapa em `graphify-out/`. Use antes de responder sobre arquitetura.

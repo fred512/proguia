@@ -30,6 +30,7 @@
       "_origin": "ast",
       "id": "app",
       "community": 10,
+      "community_name": "app.vue",
       "norm_label": "app.vue"
     },
     {
@@ -40,6 +41,7 @@
       "_origin": "ast",
       "id": "app_isdark",
       "community": 10,
+      "community_name": "app.vue",
       "norm_label": "{ isdark }"
     },
     {
@@ -50,6 +52,7 @@
       "_origin": "ast",
       "id": "components_brandlogo",
       "community": 12,
+      "community_name": "BrandLogo.vue",
       "norm_label": "brandlogo.vue"
     },
     {
@@ -60,6 +63,7 @@
       "_origin": "ast",
       "id": "components_pwainstallprompt",
       "community": 3,
+      "community_name": "PwaInstallPrompt.vue",
       "norm_label": "pwainstallprompt.vue"
     },
     {
@@ -70,6 +74,7 @@
       "_origin": "ast",
       "id": "components_pwainstallprompt_pwa",
       "community": 3,
+      "community_name": "PwaInstallPrompt.vue",
       "norm_label": "{ $pwa }"
     },
     {
@@ -80,6 +85,7 @@
       "_origin": "ast",
       "id": "components_pwainstallprompt_dismissed",
       "community": 3,
+      "community_name": "PwaInstallPrompt.vue",
       "norm_label": "dismissed"
     },
     {
@@ -90,6 +96,7 @@
       "_origin": "ast",
       "id": "components_pwainstallprompt_installapp",
       "community": 3,
+      "community_name": "PwaInstallPrompt.vue",
       "norm_label": "installapp()"
     },
     {
@@ -100,6 +107,7 @@
       "_origin": "ast",
       "id": "components_pwainstallprompt_refreshapp",
       "community": 3,
+      "community_name": "PwaInstallPrompt.vue",
       "norm_label": "refreshapp()"
     },
     {
@@ -110,6 +118,7 @@
       "_origin": "ast",
       "id": "components_pwainstallprompt_dismissinstall",
       "community": 3,
+      "community_name": "PwaInstallPrompt.vue",
       "norm_label": "dismissinstall()"
     },
     {
@@ -120,6 +129,7 @@
       "_origin": "ast",
       "id": "components_routecard",
       "community": 7,
+      "community_name": "RouteCard.vue",
       "norm_label": "routecard.vue"
     },
     {
@@ -130,6 +140,7 @@
       "_origin": "ast",
       "id": "components_routecard_travelroute",
       "community": 7,
+      "community_name": "RouteCard.vue",
       "norm_label": "travelroute"
     },
     {
@@ -140,6 +151,7 @@
       "_origin": "ast",
       "id": "components_routecard_money",
       "community": 7,
+      "community_name": "RouteCard.vue",
       "norm_label": "money()"
     },
     {
@@ -150,6 +162,7 @@
       "_origin": "ast",
       "id": "components_routegallery",
       "community": 7,
+      "community_name": "RouteCard.vue",
       "norm_label": "routegallery.vue"
     },
     {
@@ -160,6 +173,7 @@
       "_origin": "ast",
       "id": "components_themetoggle",
       "community": 11,
+      "community_name": "ThemeToggle.vue",
       "norm_label": "themetoggle.vue"
     },
     {
@@ -170,7 +184,151 @@
       "_origin": "ast",
       "id": "components_themetoggle_isdark_toggletheme",
       "community": 11,
+      "community_name": "ThemeToggle.vue",
       "norm_label": "{ isdark, toggletheme }"
+    },
+    {
+      "label": "useAuth.ts",
+      "file_type": "code",
+      "source_file": "composables/useAuth.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_useauth",
+      "community": 21,
+      "community_name": "useAuth.ts",
+      "norm_label": "useauth.ts"
+    },
+    {
+      "label": "useAuth()",
+      "file_type": "code",
+      "source_file": "composables/useAuth.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "composables_useauth_useauth",
+      "community": 21,
+      "community_name": "useAuth.ts",
+      "norm_label": "useauth()"
+    },
+    {
+      "label": "useCommonsSearch.ts",
+      "file_type": "code",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_usecommonssearch",
+      "community": 18,
+      "community_name": "useCommonsSearch.ts",
+      "norm_label": "usecommonssearch.ts"
+    },
+    {
+      "label": "CommonsImage",
+      "file_type": "code",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_usecommonssearch_commonsimage",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "commonsimage"
+    },
+    {
+      "label": "stripHtml()",
+      "file_type": "code",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "composables_usecommonssearch_striphtml",
+      "community": 18,
+      "community_name": "useCommonsSearch.ts",
+      "norm_label": "striphtml()"
+    },
+    {
+      "label": "COMMONS_SUGGESTIONS",
+      "file_type": "code",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "composables_usecommonssearch_commons_suggestions",
+      "community": 18,
+      "community_name": "useCommonsSearch.ts",
+      "norm_label": "commons_suggestions"
+    },
+    {
+      "label": "useCommonsSearch()",
+      "file_type": "code",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "composables_usecommonssearch_usecommonssearch",
+      "community": 18,
+      "community_name": "useCommonsSearch.ts",
+      "norm_label": "usecommonssearch()"
+    },
+    {
+      "label": "useImageUpload.ts",
+      "file_type": "code",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_useimageupload",
+      "community": 19,
+      "community_name": "useImageUpload.ts",
+      "norm_label": "useimageupload.ts"
+    },
+    {
+      "label": "ACCEPTED_TYPES",
+      "file_type": "code",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "composables_useimageupload_accepted_types",
+      "community": 19,
+      "community_name": "useImageUpload.ts",
+      "norm_label": "accepted_types"
+    },
+    {
+      "label": "UploadResult",
+      "file_type": "code",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "composables_useimageupload_uploadresult",
+      "community": 19,
+      "community_name": "useImageUpload.ts",
+      "norm_label": "uploadresult"
+    },
+    {
+      "label": "useImageUpload()",
+      "file_type": "code",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "composables_useimageupload_useimageupload",
+      "community": 19,
+      "community_name": "useImageUpload.ts",
+      "norm_label": "useimageupload()"
+    },
+    {
+      "label": "useSupabase.ts",
+      "file_type": "code",
+      "source_file": "composables/useSupabase.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_usesupabase",
+      "community": 22,
+      "community_name": "useSupabase.ts",
+      "norm_label": "usesupabase.ts"
+    },
+    {
+      "label": "useSupabase()",
+      "file_type": "code",
+      "source_file": "composables/useSupabase.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "composables_usesupabase_usesupabase",
+      "community": 22,
+      "community_name": "useSupabase.ts",
+      "norm_label": "usesupabase()"
     },
     {
       "label": "useTheme.ts",
@@ -180,6 +338,7 @@
       "_origin": "ast",
       "id": "composables_usetheme",
       "community": 9,
+      "community_name": "useTheme.ts",
       "norm_label": "usetheme.ts"
     },
     {
@@ -190,6 +349,7 @@
       "_origin": "ast",
       "id": "composables_usetheme_themename",
       "community": 9,
+      "community_name": "useTheme.ts",
       "norm_label": "themename"
     },
     {
@@ -200,7 +360,30 @@
       "_origin": "ast",
       "id": "composables_usetheme_usetheme",
       "community": 9,
+      "community_name": "useTheme.ts",
       "norm_label": "usetheme()"
+    },
+    {
+      "label": "admin.ts",
+      "file_type": "code",
+      "source_file": "middleware/admin.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "middleware_admin",
+      "community": 23,
+      "community_name": "admin.ts",
+      "norm_label": "admin.ts"
+    },
+    {
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "middleware/auth.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "middleware_auth",
+      "community": 24,
+      "community_name": "auth.ts",
+      "norm_label": "auth.ts"
     },
     {
       "label": "nuxt.config.ts",
@@ -210,6 +393,7 @@
       "_origin": "ast",
       "id": "nuxt_config",
       "community": 13,
+      "community_name": "nuxt.config.ts",
       "norm_label": "nuxt.config.ts"
     },
     {
@@ -220,6 +404,7 @@
       "_origin": "ast",
       "id": "package",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "package.json"
     },
     {
@@ -230,6 +415,7 @@
       "_origin": "ast",
       "id": "package_name",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "name"
     },
     {
@@ -240,6 +426,7 @@
       "_origin": "ast",
       "id": "package_private",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "private"
     },
     {
@@ -250,6 +437,7 @@
       "_origin": "ast",
       "id": "package_type",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "type"
     },
     {
@@ -259,7 +447,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "scripts"
     },
     {
@@ -269,7 +458,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "dev"
     },
     {
@@ -279,7 +469,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "build"
     },
     {
@@ -289,7 +480,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_generate",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "generate"
     },
     {
@@ -299,7 +491,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_generate_pwa_assets",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "generate:pwa-assets"
     },
     {
@@ -309,7 +502,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_preview",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "preview"
     },
     {
@@ -319,7 +513,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_scripts_postinstall",
-      "community": 2,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "postinstall"
     },
     {
@@ -330,96 +525,128 @@
       "_origin": "ast",
       "id": "package_dependencies",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "dependencies"
+    },
+    {
+      "label": "@supabase/supabase-js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "package_dependencies_supabase_supabase_js",
+      "community": 1,
+      "community_name": "scripts",
+      "norm_label": "@supabase/supabase-js"
+    },
+    {
+      "label": "@supabase/supabase-js",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "supabase_supabase_js",
+      "community": 1,
+      "community_name": "scripts",
+      "norm_label": "@supabase/supabase-js"
     },
     {
       "label": "nuxt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "package_dependencies_nuxt",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "nuxt"
     },
     {
       "label": "nuxt",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "nuxt",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "nuxt"
     },
     {
       "label": "vue",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "package_dependencies_vue",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "vue"
     },
     {
       "label": "vue",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "vue",
       "community": 1,
+      "community_name": "scripts",
       "norm_label": "vue"
     },
     {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "package_devdependencies",
-      "community": 6,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "devdependencies"
     },
     {
       "label": "@vite-pwa/assets-generator",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "package_devdependencies_vite_pwa_assets_generator",
-      "community": 6,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "@vite-pwa/assets-generator"
     },
     {
       "label": "@vite-pwa/assets-generator",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "vite_pwa_assets_generator",
-      "community": 6,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "@vite-pwa/assets-generator"
     },
     {
       "label": "@vite-pwa/nuxt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "package_devdependencies_vite_pwa_nuxt",
-      "community": 6,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "@vite-pwa/nuxt"
     },
     {
       "label": "@vite-pwa/nuxt",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "vite_pwa_nuxt",
-      "community": 6,
+      "community": 1,
+      "community_name": "scripts",
       "norm_label": "@vite-pwa/nuxt"
     },
     {
@@ -430,6 +657,7 @@
       "_origin": "ast",
       "id": "pages_index",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "pages/index.vue"
     },
     {
@@ -440,6 +668,7 @@
       "_origin": "ast",
       "id": "pages_index_routes",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "routes"
     },
     {
@@ -450,6 +679,7 @@
       "_origin": "ast",
       "id": "pages_index_selectedroute",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "selectedroute"
     },
     {
@@ -460,6 +690,7 @@
       "_origin": "ast",
       "id": "pages_index_galleryroute",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "galleryroute"
     },
     {
@@ -470,6 +701,7 @@
       "_origin": "ast",
       "id": "pages_index_bookingopen",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "bookingopen"
     },
     {
@@ -480,6 +712,7 @@
       "_origin": "ast",
       "id": "pages_index_bookingstep",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "bookingstep"
     },
     {
@@ -490,6 +723,7 @@
       "_origin": "ast",
       "id": "pages_index_booking",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "booking"
     },
     {
@@ -500,6 +734,7 @@
       "_origin": "ast",
       "id": "pages_index_mobilemenuopen",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "mobilemenuopen"
     },
     {
@@ -510,6 +745,7 @@
       "_origin": "ast",
       "id": "pages_index_closemobilemenu",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "closemobilemenu()"
     },
     {
@@ -520,6 +756,7 @@
       "_origin": "ast",
       "id": "pages_index_scrolltoroutes",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "scrolltoroutes()"
     },
     {
@@ -530,6 +767,7 @@
       "_origin": "ast",
       "id": "pages_index_scrolltoguide",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "scrolltoguide()"
     },
     {
@@ -540,6 +778,7 @@
       "_origin": "ast",
       "id": "pages_index_openbooking",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "openbooking()"
     },
     {
@@ -550,6 +789,7 @@
       "_origin": "ast",
       "id": "pages_index_closebooking",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "closebooking()"
     },
     {
@@ -560,6 +800,7 @@
       "_origin": "ast",
       "id": "pages_index_choosepackage",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "choosepackage()"
     },
     {
@@ -570,6 +811,7 @@
       "_origin": "ast",
       "id": "pages_index_packagemultiplier",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "packagemultiplier"
     },
     {
@@ -580,6 +822,7 @@
       "_origin": "ast",
       "id": "pages_index_total",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "total"
     },
     {
@@ -590,6 +833,7 @@
       "_origin": "ast",
       "id": "pages_index_perday",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "perday"
     },
     {
@@ -600,6 +844,7 @@
       "_origin": "ast",
       "id": "pages_index_money",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "money()"
     },
     {
@@ -610,7 +855,448 @@
       "_origin": "ast",
       "id": "pages_index_submitrequest",
       "community": 0,
+      "community_name": "pages/index.vue",
       "norm_label": "submitrequest()"
+    },
+    {
+      "label": "admin.vue",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_painel_admin",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "admin.vue"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "pages_painel_admin_supabase",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "supabase"
+    },
+    {
+      "label": "{ signOut }",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "pages_painel_admin_signout",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "{ signout }"
+    },
+    {
+      "label": "GuideRow",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "pages_painel_admin_guiderow",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "guiderow"
+    },
+    {
+      "label": "RequestRow",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "pages_painel_admin_requestrow",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "requestrow"
+    },
+    {
+      "label": "InviteRow",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "pages_painel_admin_inviterow",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "inviterow"
+    },
+    {
+      "label": "guides",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "pages_painel_admin_guides",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "guides"
+    },
+    {
+      "label": "requests",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "pages_painel_admin_requests",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "requests"
+    },
+    {
+      "label": "invites",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "pages_painel_admin_invites",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "invites"
+    },
+    {
+      "label": "loading",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "pages_painel_admin_loading",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "loading"
+    },
+    {
+      "label": "errorMessage",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "pages_painel_admin_errormessage",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "errormessage"
+    },
+    {
+      "label": "menuOpen",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "pages_painel_admin_menuopen",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "menuopen"
+    },
+    {
+      "label": "inviteEmail",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "pages_painel_admin_inviteemail",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "inviteemail"
+    },
+    {
+      "label": "inviteNote",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "pages_painel_admin_invitenote",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "invitenote"
+    },
+    {
+      "label": "creatingInvite",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "pages_painel_admin_creatinginvite",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "creatinginvite"
+    },
+    {
+      "label": "lastInviteLink",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "pages_painel_admin_lastinvitelink",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "lastinvitelink"
+    },
+    {
+      "label": "copied",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "pages_painel_admin_copied",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "copied"
+    },
+    {
+      "label": "money()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "pages_painel_admin_money",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "money()"
+    },
+    {
+      "label": "shortDate()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "pages_painel_admin_shortdate",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "shortdate()"
+    },
+    {
+      "label": "guideName()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "pages_painel_admin_guidename",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "guidename()"
+    },
+    {
+      "label": "publishedCount",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "pages_painel_admin_publishedcount",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "publishedcount"
+    },
+    {
+      "label": "openRequests",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "pages_painel_admin_openrequests",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "openrequests"
+    },
+    {
+      "label": "pipeline",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "pages_painel_admin_pipeline",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "pipeline"
+    },
+    {
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "pages_painel_admin_load",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "load()"
+    },
+    {
+      "label": "togglePublished()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "pages_painel_admin_togglepublished",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "togglepublished()"
+    },
+    {
+      "label": "createInvite()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "pages_painel_admin_createinvite",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "createinvite()"
+    },
+    {
+      "label": "copyLink()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L138",
+      "_origin": "ast",
+      "id": "pages_painel_admin_copylink",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "copylink()"
+    },
+    {
+      "label": "closeMenu()",
+      "file_type": "code",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L144",
+      "_origin": "ast",
+      "id": "pages_painel_admin_closemenu",
+      "community": 6,
+      "community_name": "admin.vue",
+      "norm_label": "closemenu()"
+    },
+    {
+      "label": "entrar.vue",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_painel_entrar",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "entrar.vue"
+    },
+    {
+      "label": "route",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_route",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "route"
+    },
+    {
+      "label": "{ user, isAdmin, hasGuideProfile, init, rememberInvite, signInWithEmail, signInWithGoogle }",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_user_isadmin_hasguideprofile_init_rememberinvite_signinwithemail_signinwithgoogle",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "{ user, isadmin, hasguideprofile, init, rememberinvite, signinwithemail, signinwithgoogle }"
+    },
+    {
+      "label": "email",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_email",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "email"
+    },
+    {
+      "label": "sending",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_sending",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "sending"
+    },
+    {
+      "label": "sent",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_sent",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "sent"
+    },
+    {
+      "label": "redirecting",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_redirecting",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "redirecting"
+    },
+    {
+      "label": "errorMessage",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_errormessage",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "errormessage"
+    },
+    {
+      "label": "noInvite",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_noinvite",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "noinvite"
+    },
+    {
+      "label": "inviteToken",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_invitetoken",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "invitetoken"
+    },
+    {
+      "label": "submitEmail()",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_submitemail",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "submitemail()"
+    },
+    {
+      "label": "submitGoogle()",
+      "file_type": "code",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "pages_painel_entrar_submitgoogle",
+      "community": 17,
+      "community_name": "entrar.vue",
+      "norm_label": "submitgoogle()"
     },
     {
       "label": "painel/index.vue",
@@ -620,36 +1306,216 @@
       "_origin": "ast",
       "id": "pages_painel_index",
       "community": 8,
+      "community_name": "painel/index.vue",
       "norm_label": "painel/index.vue"
+    },
+    {
+      "label": "{ user, isAdmin, signOut }",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "pages_painel_index_user_isadmin_signout",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "{ user, isadmin, signout }"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "pages_painel_index_supabase",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "supabase"
+    },
+    {
+      "label": "RequestRow",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "pages_painel_index_requestrow",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "requestrow"
+    },
+    {
+      "label": "STATUS_LABELS",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "pages_painel_index_status_labels",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "status_labels"
+    },
+    {
+      "label": "hostName",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "pages_painel_index_hostname",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "hostname"
+    },
+    {
+      "label": "published",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "pages_painel_index_published",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "published"
     },
     {
       "label": "requests",
       "file_type": "code",
       "source_file": "pages/painel/index.vue",
-      "source_location": "L2",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "pages_painel_index_requests",
       "community": 8,
+      "community_name": "painel/index.vue",
       "norm_label": "requests"
+    },
+    {
+      "label": "routeCount",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "pages_painel_index_routecount",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "routecount"
+    },
+    {
+      "label": "loading",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "pages_painel_index_loading",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "loading"
+    },
+    {
+      "label": "errorMessage",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "pages_painel_index_errormessage",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "errormessage"
     },
     {
       "label": "menuOpen",
       "file_type": "code",
       "source_file": "pages/painel/index.vue",
-      "source_location": "L8",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "pages_painel_index_menuopen",
       "community": 8,
+      "community_name": "painel/index.vue",
       "norm_label": "menuopen"
+    },
+    {
+      "label": "money()",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "pages_painel_index_money",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "money()"
+    },
+    {
+      "label": "shortDate()",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "pages_painel_index_shortdate",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "shortdate()"
+    },
+    {
+      "label": "newCount",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "pages_painel_index_newcount",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "newcount"
+    },
+    {
+      "label": "openTotal",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "pages_painel_index_opentotal",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "opentotal"
+    },
+    {
+      "label": "greeting",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "pages_painel_index_greeting",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "greeting"
+    },
+    {
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "pages_painel_index_load",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "load()"
+    },
+    {
+      "label": "updateStatus()",
+      "file_type": "code",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "pages_painel_index_updatestatus",
+      "community": 8,
+      "community_name": "painel/index.vue",
+      "norm_label": "updatestatus()"
     },
     {
       "label": "closeMenu()",
       "file_type": "code",
       "source_file": "pages/painel/index.vue",
-      "source_location": "L9",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "pages_painel_index_closemenu",
       "community": 8,
+      "community_name": "painel/index.vue",
       "norm_label": "closemenu()"
     },
     {
@@ -660,57 +1526,833 @@
       "_origin": "ast",
       "id": "pages_painel_perfil",
       "community": 4,
+      "community_name": "perfil.vue",
       "norm_label": "perfil.vue"
+    },
+    {
+      "label": "{ user, isAdmin, signOut }",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_user_isadmin_signout",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "{ user, isadmin, signout }"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_supabase",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "supabase"
     },
     {
       "label": "profile",
       "file_type": "code",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L2",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "pages_painel_perfil_profile",
       "community": 4,
+      "community_name": "perfil.vue",
       "norm_label": "profile"
+    },
+    {
+      "label": "published",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_published",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "published"
+    },
+    {
+      "label": "loading",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_loading",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "loading"
+    },
+    {
+      "label": "saving",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_saving",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "saving"
     },
     {
       "label": "saved",
       "file_type": "code",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L12",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "pages_painel_perfil_saved",
       "community": 4,
+      "community_name": "perfil.vue",
       "norm_label": "saved"
+    },
+    {
+      "label": "errorMessage",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_errormessage",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "errormessage"
     },
     {
       "label": "menuOpen",
       "file_type": "code",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L13",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "pages_painel_perfil_menuopen",
       "community": 4,
+      "community_name": "perfil.vue",
       "norm_label": "menuopen"
+    },
+    {
+      "label": "initials",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_initials",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "initials"
+    },
+    {
+      "label": "loadProfile()",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_loadprofile",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "loadprofile()"
     },
     {
       "label": "saveProfile()",
       "file_type": "code",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L15",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "pages_painel_perfil_saveprofile",
       "community": 4,
+      "community_name": "perfil.vue",
       "norm_label": "saveprofile()"
     },
     {
       "label": "closeMenu()",
       "file_type": "code",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L20",
+      "source_location": "L96",
       "_origin": "ast",
       "id": "pages_painel_perfil_closemenu",
       "community": 4,
+      "community_name": "perfil.vue",
       "norm_label": "closemenu()"
+    },
+    {
+      "label": "photoInput",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_photoinput",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "photoinput"
+    },
+    {
+      "label": "uploadingPhoto",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_uploadingphoto",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "uploadingphoto"
+    },
+    {
+      "label": "ACCEPTED_TYPES",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_accepted_types",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "accepted_types"
+    },
+    {
+      "label": "pickPhoto()",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_pickphoto",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "pickphoto()"
+    },
+    {
+      "label": "uploadPhoto()",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_uploadphoto",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "uploadphoto()"
+    },
+    {
+      "label": "removePhoto()",
+      "file_type": "code",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L160",
+      "_origin": "ast",
+      "id": "pages_painel_perfil_removephoto",
+      "community": 4,
+      "community_name": "perfil.vue",
+      "norm_label": "removephoto()"
+    },
+    {
+      "label": "roteiros.vue",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "roteiros.vue"
+    },
+    {
+      "label": "{ user, isAdmin, signOut }",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_user_isadmin_signout",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "{ user, isadmin, signout }"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_supabase",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "supabase"
+    },
+    {
+      "label": "{ uploadImage }",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_uploadimage",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "{ uploadimage }"
+    },
+    {
+      "label": "{ results: commonsResults, searching, searchError, search: searchCommons, COMMONS_SUGGESTIONS }",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_results_commonsresults_searching_searcherror_search_searchcommons_commons_suggestions",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "{ results: commonsresults, searching, searcherror, search: searchcommons, commons_suggestions }"
+    },
+    {
+      "label": "GalleryItem",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_galleryitem",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "galleryitem"
+    },
+    {
+      "label": "RouteRow",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_routerow",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "routerow"
+    },
+    {
+      "label": "routes",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_routes",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "routes"
+    },
+    {
+      "label": "loading",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_loading",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "loading"
+    },
+    {
+      "label": "saving",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_saving",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "saving"
+    },
+    {
+      "label": "uploading",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_uploading",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "uploading"
+    },
+    {
+      "label": "errorMessage",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_errormessage",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "errormessage"
+    },
+    {
+      "label": "menuOpen",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_menuopen",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "menuopen"
+    },
+    {
+      "label": "blank()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_blank",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "blank()"
+    },
+    {
+      "label": "draft",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_draft",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "draft"
+    },
+    {
+      "label": "editing",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_editing",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "editing"
+    },
+    {
+      "label": "coverInput",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_coverinput",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "coverinput"
+    },
+    {
+      "label": "galleryInput",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_galleryinput",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "galleryinput"
+    },
+    {
+      "label": "money()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_money",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "money()"
+    },
+    {
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_load",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "load()"
+    },
+    {
+      "label": "resetDraft()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_resetdraft",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "resetdraft()"
+    },
+    {
+      "label": "editRoute()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_editroute",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "editroute()"
+    },
+    {
+      "label": "saveRoute()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_saveroute",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "saveroute()"
+    },
+    {
+      "label": "removeRoute()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_removeroute",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "removeroute()"
+    },
+    {
+      "label": "toggleActive()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L162",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_toggleactive",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "toggleactive()"
+    },
+    {
+      "label": "uploadCover()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_uploadcover",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "uploadcover()"
+    },
+    {
+      "label": "uploadGallery()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L193",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_uploadgallery",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "uploadgallery()"
+    },
+    {
+      "label": "removeGalleryItem()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L214",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_removegalleryitem",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "removegalleryitem()"
+    },
+    {
+      "label": "commonsTerm",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L216",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_commonsterm",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "commonsterm"
+    },
+    {
+      "label": "commonsOpen",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_commonsopen",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "commonsopen"
+    },
+    {
+      "label": "runCommonsSearch()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L219",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_runcommonssearch",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "runcommonssearch()"
+    },
+    {
+      "label": "useSuggestion()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L221",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_usesuggestion",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "usesuggestion()"
+    },
+    {
+      "label": "addFromCommons()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L226",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_addfromcommons",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "addfromcommons()"
+    },
+    {
+      "label": "closeMenu()",
+      "file_type": "code",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L238",
+      "_origin": "ast",
+      "id": "pages_painel_roteiros_closemenu",
+      "community": 2,
+      "community_name": "roteiros.vue",
+      "norm_label": "closemenu()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "supabase_functions_notify_guide_index",
+      "community": 20,
+      "community_name": "index.ts",
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "money()",
+      "file_type": "code",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "supabase_functions_notify_guide_index_money",
+      "community": 20,
+      "community_name": "index.ts",
+      "norm_label": "money()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "supabase_functions_notify_guide_index_formatdate",
+      "community": 20,
+      "community_name": "index.ts",
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "escapeHtml()",
+      "file_type": "code",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "supabase_functions_notify_guide_index_escapehtml",
+      "community": 20,
+      "community_name": "index.ts",
+      "norm_label": "escapehtml()"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "PersonalTravel",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_personaltravel",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "personaltravel"
+    },
+    {
+      "label": "Vocabul\u00e1rio \u2014 importante",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "claude_vocabul\u00e1rio_importante",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "vocabulario \u2014 importante"
+    },
+    {
+      "label": "Estado atual",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "claude_estado_atual",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "estado atual"
+    },
+    {
+      "label": "Pr\u00f3xima fatia (n\u00e3o iniciada)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "claude_pr\u00f3xima_fatia_n\u00e3o_iniciada",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "proxima fatia (nao iniciada)"
+    },
+    {
+      "label": "Infraestrutura",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "claude_infraestrutura",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "infraestrutura"
+    },
+    {
+      "label": "Vari\u00e1veis",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "claude_vari\u00e1veis",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "variaveis"
+    },
+    {
+      "label": "Banco",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "claude_banco",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "banco"
+    },
+    {
+      "label": "Decis\u00f5es de seguran\u00e7a que n\u00e3o devem ser desfeitas",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "claude_decis\u00f5es_de_seguran\u00e7a_que_n\u00e3o_devem_ser_desfeitas",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "decisoes de seguranca que nao devem ser desfeitas"
+    },
+    {
+      "label": "Cadastro \u00e9 por convite",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "claude_cadastro_\u00e9_por_convite",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "cadastro e por convite"
+    },
+    {
+      "label": "Fotos e licen\u00e7as",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "claude_fotos_e_licen\u00e7as",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "fotos e licencas"
+    },
+    {
+      "label": "E-mail (escrito, n\u00e3o ativado)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "claude_e_mail_escrito_n\u00e3o_ativado",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "e-mail (escrito, nao ativado)"
+    },
+    {
+      "label": "Arquivos",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L116",
+      "_origin": "ast",
+      "id": "claude_arquivos",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "arquivos"
+    },
+    {
+      "label": "Desenvolvimento",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L137",
+      "_origin": "ast",
+      "id": "claude_desenvolvimento",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "desenvolvimento"
+    },
+    {
+      "label": "Armadilhas conhecidas",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L148",
+      "_origin": "ast",
+      "id": "claude_armadilhas_conhecidas",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "armadilhas conhecidas"
+    },
+    {
+      "label": "Guardrails",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L164",
+      "_origin": "ast",
+      "id": "claude_guardrails",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "guardrails"
+    },
+    {
+      "label": "Design",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "claude_design",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "design"
+    },
+    {
+      "label": "Graphify",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L180",
+      "_origin": "ast",
+      "id": "claude_graphify",
+      "community": 16,
+      "community_name": "PersonalTravel",
+      "norm_label": "graphify"
     },
     {
       "label": "PNPM Build Permissions",
@@ -721,9 +2363,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pnpm_workspace_build_permissions",
       "community": 14,
-      "norm_label": "pnpm build permissions"
+      "norm_label": "pnpm build permissions",
+      "id": "pnpm_workspace_build_permissions",
+      "community_name": "PNPM Build Permissions"
     },
     {
       "label": "Apple Touch App Icon",
@@ -734,9 +2377,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_apple_touch_icon_180x180_app_icon",
       "community": 5,
-      "norm_label": "apple touch app icon"
+      "norm_label": "apple touch app icon",
+      "id": "public_images_apple_touch_icon_180x180_app_icon",
+      "community_name": "ProGuia Brand Logo"
     },
     {
       "label": "Marcia Marianno Machado Guide Portrait",
@@ -747,9 +2391,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_marcia_marianno_machado_guide_portrait",
       "community": 15,
-      "norm_label": "marcia marianno machado guide portrait"
+      "norm_label": "marcia marianno machado guide portrait",
+      "id": "public_images_marcia_marianno_machado_guide_portrait",
+      "community_name": "Marcia Marianno Machado Guide Portrait"
     },
     {
       "label": "Maskable App Icon",
@@ -760,9 +2405,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_maskable_icon_512x512_app_icon",
       "community": 5,
-      "norm_label": "maskable app icon"
+      "norm_label": "maskable app icon",
+      "id": "public_images_maskable_icon_512x512_app_icon",
+      "community_name": "ProGuia Brand Logo"
     },
     {
       "label": "ProGuia Brand Logo",
@@ -773,9 +2419,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_proguia_logo_brand_logo",
       "community": 5,
-      "norm_label": "proguia brand logo"
+      "norm_label": "proguia brand logo",
+      "id": "public_images_proguia_logo_brand_logo",
+      "community_name": "ProGuia Brand Logo"
     },
     {
       "label": "PWA 192 App Icon",
@@ -786,9 +2433,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_pwa_192x192_app_icon",
       "community": 5,
-      "norm_label": "pwa 192 app icon"
+      "norm_label": "pwa 192 app icon",
+      "id": "public_images_pwa_192x192_app_icon",
+      "community_name": "ProGuia Brand Logo"
     },
     {
       "label": "PWA 512 App Icon",
@@ -799,9 +2447,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_pwa_512x512_app_icon",
       "community": 5,
-      "norm_label": "pwa 512 app icon"
+      "norm_label": "pwa 512 app icon",
+      "id": "public_images_pwa_512x512_app_icon",
+      "community_name": "ProGuia Brand Logo"
     },
     {
       "label": "PWA 64 App Icon",
@@ -812,9 +2461,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_images_pwa_64x64_app_icon",
       "community": 5,
-      "norm_label": "pwa 64 app icon"
+      "norm_label": "pwa 64 app icon",
+      "id": "public_images_pwa_64x64_app_icon",
+      "community_name": "ProGuia Brand Logo"
     }
   ],
   "links": [
@@ -944,6 +2594,129 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "composables/useAuth.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_useauth",
+      "target": "composables_useauth_useauth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usecommonssearch",
+      "target": "composables_usecommonssearch_commons_suggestions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usecommonssearch",
+      "target": "composables_usecommonssearch_commonsimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usecommonssearch",
+      "target": "composables_usecommonssearch_striphtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usecommonssearch",
+      "target": "composables_usecommonssearch_usecommonssearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros_saveroute",
+      "target": "composables_usecommonssearch_commonsimage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useCommonsSearch.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usecommonssearch_usecommonssearch",
+      "target": "composables_usecommonssearch_striphtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_useimageupload",
+      "target": "composables_useimageupload_accepted_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_useimageupload",
+      "target": "composables_useimageupload_uploadresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useImageUpload.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_useimageupload",
+      "target": "composables_useimageupload_useimageupload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useSupabase.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usesupabase",
+      "target": "composables_usesupabase_usesupabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "composables/useTheme.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -978,7 +2751,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package",
@@ -1099,7 +2872,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -1110,7 +2883,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_supabase_supabase_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -1125,6 +2909,18 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
+      "source": "package_dependencies_supabase_supabase_js",
+      "target": "supabase_supabase_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
       "source": "package_dependencies_nuxt",
       "target": "nuxt",
       "confidence_score": 1.0
@@ -1133,7 +2929,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -1145,7 +2941,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -1156,7 +2952,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -1167,7 +2963,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -1179,7 +2975,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -1412,8 +3208,439 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "pages/painel/index.vue",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_closemenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_copied",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_copylink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_createinvite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_creatinginvite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_errormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_guidename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_guiderow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_guides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_inviteemail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_invitenote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_inviterow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_invites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_lastinvitelink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "confidence": "INFERRED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "context": "argument",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_load",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_loading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_menuopen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_money",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_openrequests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_publishedcount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_requestrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_requests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_shortdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_signout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin",
+      "target": "pages_painel_admin_togglepublished",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/admin.vue",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_admin_createinvite",
+      "target": "pages_painel_admin_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_email",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
       "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_errormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_invitetoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_noinvite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_redirecting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_sending",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_sent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_submitemail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_submitgoogle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/entrar.vue",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_entrar",
+      "target": "pages_painel_entrar_user_isadmin_hasguideprofile_init_rememberinvite_signinwithemail_signinwithgoogle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_index",
@@ -1424,7 +3651,63 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "pages/painel/index.vue",
-      "source_location": "L8",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_errormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_greeting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_hostname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "confidence": "INFERRED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "context": "argument",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_load",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_loading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_index",
@@ -1435,7 +3718,62 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "pages/painel/index.vue",
-      "source_location": "L2",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_money",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_newcount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_opentotal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_published",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_requestrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_index",
@@ -1445,8 +3783,85 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_routecount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_shortdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_status_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_updatestatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/index.vue",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_index",
+      "target": "pages_painel_index_user_isadmin_signout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L20",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_accepted_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_perfil",
@@ -1457,7 +3872,52 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L13",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_errormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_initials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_loading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "confidence": "INFERRED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "context": "argument",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_loadprofile",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_perfil",
@@ -1468,7 +3928,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L2",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_photoinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_pickphoto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_perfil",
@@ -1479,7 +3961,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L12",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_published",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_removephoto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_perfil",
@@ -1490,11 +3994,710 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "pages/painel/perfil.vue",
-      "source_location": "L15",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_painel_perfil",
       "target": "pages_painel_perfil_saveprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_saving",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_uploadingphoto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L104",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_uploadphoto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/perfil.vue",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_perfil",
+      "target": "pages_painel_perfil_user_isadmin_signout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L226",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_addfromcommons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_blank",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L238",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_closemenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L217",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_commonsopen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_commonsterm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_coverinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_draft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_editing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_editroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_errormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_galleryinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_galleryitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "confidence": "INFERRED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "context": "argument",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_load",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_loading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_menuopen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_money",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L214",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_removegalleryitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_removeroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_resetdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_results_commonsresults_searching_searcherror_search_searchcommons_commons_suggestions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_routerow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_routes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L219",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_runcommonssearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_saveroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_saving",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L162",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_toggleactive",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_uploadcover",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L193",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_uploadgallery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_uploadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_uploading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_user_isadmin_signout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L221",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros",
+      "target": "pages_painel_roteiros_usesuggestion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros_resetdraft",
+      "target": "pages_painel_roteiros_blank",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros_removeroute",
+      "target": "pages_painel_roteiros_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros_saveroute",
+      "target": "pages_painel_roteiros_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros_removeroute",
+      "target": "pages_painel_roteiros_resetdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/painel/roteiros.vue",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_painel_roteiros_saveroute",
+      "target": "pages_painel_roteiros_resetdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "supabase_functions_notify_guide_index",
+      "target": "supabase_functions_notify_guide_index_escapehtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "supabase_functions_notify_guide_index",
+      "target": "supabase_functions_notify_guide_index_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "supabase/functions/notify-guide/index.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "supabase_functions_notify_guide_index",
+      "target": "supabase_functions_notify_guide_index_money",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude",
+      "target": "claude_personaltravel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_arquivos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_banco",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_desenvolvimento",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_e_mail_escrito_n\u00e3o_ativado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_estado_atual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_fotos_e_licen\u00e7as",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_guardrails",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_infraestrutura",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_personaltravel",
+      "target": "claude_vocabul\u00e1rio_importante",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_estado_atual",
+      "target": "claude_pr\u00f3xima_fatia_n\u00e3o_iniciada",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_infraestrutura",
+      "target": "claude_vari\u00e1veis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_banco",
+      "target": "claude_cadastro_\u00e9_por_convite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_banco",
+      "target": "claude_decis\u00f5es_de_seguran\u00e7a_que_n\u00e3o_devem_ser_desfeitas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_desenvolvimento",
+      "target": "claude_armadilhas_conhecidas",
       "confidence_score": 1.0
     },
     {
@@ -1565,5 +4768,6 @@
       "confidence_score": 0.85,
       "source_file": "public/images/proguia-logo.svg"
     }
-  ]
+  ],
+  "built_at_commit": "129f2acdbf9e08b9211c5942522195d39e759cad"
 }

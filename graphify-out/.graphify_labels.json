@@ -1,1 +1,27 @@
-{"0": "Public Booking Flow", "1": "Application Dependencies", "2": "Package Scripts", "3": "PWA Installation", "4": "Guide Profile Editor", "5": "Brand and PWA Icons", "6": "PWA Tooling", "7": "Route Cards and Gallery", "8": "Guide Dashboard", "9": "Theme State", "10": "App Shell", "11": "Theme Toggle", "12": "Brand Logo", "13": "Nuxt Configuration", "14": "PNPM Build Permissions", "15": "Guide Portrait"}
+{
+  "0": "pages/index.vue",
+  "1": "scripts",
+  "2": "roteiros.vue",
+  "3": "PwaInstallPrompt.vue",
+  "4": "perfil.vue",
+  "5": "ProGuia Brand Logo",
+  "6": "admin.vue",
+  "7": "RouteCard.vue",
+  "8": "painel/index.vue",
+  "9": "useTheme.ts",
+  "10": "app.vue",
+  "11": "ThemeToggle.vue",
+  "12": "BrandLogo.vue",
+  "13": "nuxt.config.ts",
+  "14": "PNPM Build Permissions",
+  "15": "Marcia Marianno Machado Guide Portrait",
+  "16": "PersonalTravel",
+  "17": "entrar.vue",
+  "18": "useCommonsSearch.ts",
+  "19": "useImageUpload.ts",
+  "20": "index.ts",
+  "21": "useAuth.ts",
+  "22": "useSupabase.ts",
+  "23": "admin.ts",
+  "24": "auth.ts"
+}

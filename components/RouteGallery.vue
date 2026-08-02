@@ -20,9 +20,17 @@ defineEmits<{
       </header>
       <p class="dialog-intro">Referências de lugares que podem entrar na experiência — a composição final acompanha os dias e o perfil do seu grupo.</p>
       <div class="gallery-grid">
-        <figure v-for="photo in route.gallery" :key="photo.label">
+        <figure v-for="photo in route.gallery" :key="photo.image">
           <img :src="photo.image" :alt="photo.label">
-          <figcaption>{{ photo.label }}</figcaption>
+          <figcaption>
+            {{ photo.label }}
+            <!-- CC BY-SA, CC BY e FAL obrigam atribuição ao autor. Omitir o
+                 crédito viola a licença da foto. -->
+            <a v-if="photo.credit && photo.source" class="photo-credit" :href="photo.source" target="_blank" rel="noopener noreferrer">
+              foto: {{ photo.credit }}<template v-if="photo.license"> · {{ photo.license }}</template>
+            </a>
+            <span v-else-if="photo.credit" class="photo-credit">foto: {{ photo.credit }}<template v-if="photo.license"> · {{ photo.license }}</template></span>
+          </figcaption>
         </figure>
       </div>
       <footer class="dialog-actions">
@@ -31,3 +39,16 @@ defineEmits<{
     </section>
   </div>
 </template>
+
+<style scoped>
+.photo-credit {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.photo-credit:hover { text-decoration: underline; }
+</style>
