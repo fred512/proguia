@@ -7,6 +7,9 @@ export const useAuth = () => {
   const isAdmin = useState<boolean>('proguia-is-admin', () => false)
   const hasGuideProfile = useState<boolean>('proguia-has-guide', () => false)
   const ready = useState<boolean>('proguia-auth-ready', () => false)
+  // Motivo da recusa do convite, para a tela de entrada explicar em vez de
+  // mostrar a mensagem genérica de "sem convite".
+  const inviteError = useState<string>('proguia-invite-error', () => '')
 
   const loadRoles = async () => {
     if (!user.value) {
@@ -55,20 +58,32 @@ export const useAuth = () => {
     if (import.meta.client) window.localStorage.removeItem(INVITE_STORAGE_KEY)
   }
 
-  const redeemPendingInvite = async () => {
-    const token = pendingInvite()
+  // Aceita o token vindo da URL além do localStorage: o retorno do OAuth pode
+  // cair numa janela diferente da que abriu o convite, e aí o storage não
+  // acompanha.
+  const redeemPendingInvite = async (tokenFromUrl?: string) => {
+    const token = tokenFromUrl || pendingInvite()
     if (!token || !user.value || hasGuideProfile.value) return null
 
     const { error } = await useSupabase().rpc('redeem_guide_invite', { p_token: token })
     forgetInvite()
 
-    if (error) return error.message
+    if (error) {
+      inviteError.value = error.message
+      return error.message
+    }
 
+    inviteError.value = ''
     await loadRoles()
     return null
   }
 
-  const redirectTo = () => `${window.location.origin}/painel`
+  // Leva o convite na URL de retorno, para sobreviver ao desvio pelo provedor.
+  const redirectTo = () => {
+    const token = pendingInvite()
+    const base = `${window.location.origin}/painel`
+    return token ? `${base}?convite=${encodeURIComponent(token)}` : base
+  }
 
   // Magic link: sem senha para gerenciar, esquecer ou vazar.
   const signInWithEmail = (email: string) =>
@@ -95,6 +110,7 @@ export const useAuth = () => {
     user,
     isAdmin,
     hasGuideProfile,
+    inviteError,
     ready,
     init,
     loadRoles,

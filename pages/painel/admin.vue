@@ -221,7 +221,7 @@ const closeMenu = () => { menuOpen.value = false }
 
         <section class="request-section">
           <div class="section-heading">
-            <div><p class="eyebrow">Cadastro por convite</p><h2>Convidar um guia</h2></div>
+            <div><p class="eyebrow">Cadastro por convite</p><h2>Convidar um anfitrião</h2></div>
           </div>
 
           <form class="invite-form" @submit.prevent="createInvite">

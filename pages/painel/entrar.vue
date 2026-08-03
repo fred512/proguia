@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const { user, isAdmin, hasGuideProfile, init, rememberInvite, signInWithEmail, signInWithGoogle } = useAuth()
+const { user, isAdmin, hasGuideProfile, inviteError, init, rememberInvite, signInWithEmail, signInWithGoogle } = useAuth()
 
 const email = ref('')
 const sending = ref(false)
@@ -53,16 +53,20 @@ const submitGoogle = async () => {
       <BrandLogo />
 
       <div class="login-heading">
-        <p class="eyebrow">Painel do guia</p>
+        <p class="eyebrow">Painel do anfitrião</p>
         <h1>Entrar</h1>
-        <p>Acesso restrito a guias convidados. Clientes não precisam de conta para solicitar um roteiro.</p>
+        <p>Acesso restrito a anfitriões convidados. Clientes não precisam de conta para solicitar um roteiro.</p>
       </div>
+
+      <p v-if="inviteError" class="login-error" role="alert">
+        O convite não pôde ser usado: {{ inviteError }}
+      </p>
 
       <p v-if="inviteToken" class="login-invite" role="status">
         Convite reconhecido. Entre com seu e-mail ou com o Google para ativar seu perfil de guia.
       </p>
 
-      <p v-if="noInvite" class="login-error" role="alert">
+      <p v-if="noInvite && !inviteError" class="login-error" role="alert">
         Sua conta foi criada, mas não há convite associado a ela. O cadastro no PersonalTravel é feito por convite — peça o link a quem administra a plataforma.
       </p>
 
