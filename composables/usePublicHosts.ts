@@ -14,10 +14,11 @@ export type PublicHost = {
 const HOST_FIELDS = 'id, name, slug, region, languages, group_limit, bio, photo_url'
 const ROUTE_FIELDS = 'id, title, category, description, price_per_day, capacity, cover_image, highlights, gallery'
 
-// Tudo aqui roda com a chave publishable, sem sessão. Quem filtra é o RLS:
-// `guides_public_read` só devolve published, e `routes_public_read` só devolve
-// roteiro ativo de anfitrião publicado. O `.eq('active', true)` abaixo é
-// conveniência de consulta, não a barreira.
+// O RLS continua sendo a barreira, mas não basta como filtro: a policy
+// `guides_admin_read` dá ao administrador acesso a todos os perfis, então sem
+// o `.eq('published', true)` explícito ele enxergaria no site público os
+// perfis despublicados — um site diferente do que o visitante vê, que é o
+// pior cenário para quem precisa conferir se está tudo certo.
 export const usePublicHosts = () => {
   const supabase = useSupabase()
 
@@ -25,6 +26,7 @@ export const usePublicHosts = () => {
     const { data, error } = await supabase
       .from('guides')
       .select(HOST_FIELDS)
+      .eq('published', true)
       .order('name', { ascending: true })
 
     if (error) return { hosts: [] as PublicHost[], error: error.message }
@@ -36,12 +38,15 @@ export const usePublicHosts = () => {
       .from('guides')
       .select(HOST_FIELDS)
       .eq('slug', slug)
+      .eq('published', true)
       .maybeSingle()
 
     if (error) return { host: null, error: error.message }
     return { host: (data as PublicHost | null), error: '' }
   }
 
+  // Mesma razão: `routes_admin_read` deixaria o administrador ver rascunhos na
+  // página pública do anfitrião.
   const getRoutes = async (hostId: string) => {
     const { data, error } = await supabase
       .from('routes')
