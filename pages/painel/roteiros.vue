@@ -289,7 +289,9 @@ const closeMenu = () => { menuOpen.value = false }
           <div class="profile-fields">
             <label class="form-field form-field-wide">Nome do roteiro<input v-model="draft.title" type="text" placeholder="Ex.: Um dia entre cataratas"></label>
             <label class="form-field">Categoria<input v-model="draft.category" type="text" placeholder="Turismo, Compras…"></label>
-            <label class="form-field">Valor por dia (grupo)<input v-model.number="draft.price_per_day" type="number" min="1" step="10"></label>
+            <!-- step="10" com min="1" só aceitava 1, 11, 21… e barrava 320 sem
+                 explicação visível. "any" tira essa classe de problema. -->
+            <label class="form-field">Valor por dia (grupo)<input v-model.number="draft.price_per_day" type="number" min="1" step="any"></label>
             <label class="form-field">Máximo de pessoas<input v-model.number="draft.capacity" type="number" min="1" max="30"></label>
             <label class="form-field">Ativo<select v-model="draft.active"><option :value="true">Sim, visível no site</option><option :value="false">Não, rascunho</option></select></label>
             <label class="form-field form-field-wide">Descrição<textarea v-model="draft.description" rows="3" placeholder="O que a pessoa vai viver nesse roteiro."></textarea></label>
@@ -360,6 +362,11 @@ const closeMenu = () => { menuOpen.value = false }
             </div>
           </div>
 
+          <!-- A mensagem também aparece aqui embaixo: o alerta do topo fica
+               fora da tela quando o formulário está preenchido, e quem clica em
+               salvar está olhando para o botão. -->
+          <p v-if="errorMessage" class="admin-error form-error" role="alert">{{ errorMessage }}</p>
+
           <div class="profile-form-actions">
             <p>O valor é sempre por grupo, por dia. Os pacotes Essencial, Conforto e Completo multiplicam esse valor.</p>
             <button class="button button-lime" type="submit" :disabled="saving || uploading">{{ saving ? 'Salvando…' : (editing ? 'Salvar alterações' : 'Criar roteiro') }} <span aria-hidden="true">→</span></button>
@@ -407,6 +414,8 @@ const closeMenu = () => { menuOpen.value = false }
 }
 
 .route-form { display: grid; gap: 20px; }
+
+.form-error { margin: 0; }
 
 .route-media {
   display: grid;
