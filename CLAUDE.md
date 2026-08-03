@@ -110,48 +110,62 @@ ao **anfitrião** (novo pedido, com contato do cliente) e ao **cliente**
 `client_notified_at` — porque falham de forma independente; com um carimbo só,
 uma falha no segundo geraria reenvio duplicado do primeiro.
 
-Envia por **SMTP genérico**, configurado por variáveis de ambiente, não pela
-API do Resend — o Resend exige domínio próprio verificado e ainda não temos
-domínio. Trocar de provedor é trocar variáveis, não código.
+**Funcionando em produção desde 03/08/2026.**
 
-Provedores que aceitam remetente sem domínio próprio:
+Envia pela **API HTTP do Brevo** (`https://api.brevo.com/v3/smtp/email`), plano
+gratuito de 300/dia. É `fetch` comum, sem TCP cru.
 
-| Provedor | Host | Porta | Observação |
-|---|---|---|---|
-| Brevo | `smtp-relay.brevo.com` | 587 | verifica um e-mail avulso; 300/dia grátis |
-| Gmail | `smtp.gmail.com` | 465 | exige 2FA e senha de app |
-| Mailjet | `in-v3.mailjet.com` | 587 | verifica remetente avulso |
+Secrets em Edge Functions → Secrets: `BREVO_API_KEY` (começa com `xkeysib-`) e
+`MAIL_FROM`. O `project_service_role_key` do vault é outra coisa — é como o
+pg_cron autentica na função, não tem relação com o Brevo.
 
-Remetente: `personaltravel1br@gmail.com`. A tentativa de usar SMTP do Gmail
-travou numa parede de verificação de identidade do Google — conta nova pedindo
-código para um telefone que não é o do titular. Por isso a função ficou
-agnóstica.
+O remetente ao anfitrião usa nome exibido composto —
+`Jose Maria (via PersonalTravel)` — porque só podemos enviar do endereço
+verificado. `replyTo` cruzado: anfitrião responde ao cliente, cliente responde
+ao anfitrião, plataforma sai do meio.
 
-Em provedores de relay o usuário de login **não** é o remetente: por isso
-existem `SMTP_USER` e `MAIL_FROM` separados.
+### Dois caminhos que falharam — não repetir
 
-O remetente do e-mail ao anfitrião usa nome exibido composto —
-`Marina Costa (via PersonalTravel) <personaltravel1br@gmail.com>` — porque só
-podemos assinar mensagens do endereço que controlamos. `replyTo` aponta para o
-cliente, então responder tira a plataforma do meio.
+**SMTP do Gmail.** Parede de verificação de identidade do Google numa conta
+recém-criada, pedindo código para um telefone que não era do titular. A conta
+`personaltravel1br@gmail.com` ficou inacessível e foi abandonada.
 
-Uma conexão SMTP por rodada, não por mensagem: o Gmail estrangula a conta com
-excesso de handshakes.
+**SMTP do Brevo via denomailer.** `invalid cmd at SMTPConnection.assertCode` —
+o runtime das Edge Functions não completa o diálogo STARTTLS em TCP cru. O
+worker morria no event loop e o cron recebia 503 sem corpo.
 
-Ativar:
-```bash
-npx supabase functions deploy notify-guide
-npx supabase secrets set SMTP_HOST=smtp-relay.brevo.com
-npx supabase secrets set SMTP_PORT=587
-npx supabase secrets set SMTP_USER=<login do provedor>
-npx supabase secrets set SMTP_PASSWORD=<senha do provedor>
-npx supabase secrets set MAIL_FROM=personaltravel1br@gmail.com
+### Armadilha que custou uma hora
+
+O Brevo bloqueia chamadas de API vindas de IP desconhecido, e Edge Functions
+saem de IPs rotativos da AWS — 24 endereços bloqueados em 24 minutos, com
+alerta por e-mail em cada um. A solução é **Segurança → IPs autorizados →
+Desativar para chaves API**. Autorizar IP a IP é inviável. Não reative.
+
+### Remetente visível
+
+Como ninguém controla o DNS de `gmail.com`, o Brevo reescreve o endereço para
+`…@11807596.brevosend.com` e assina com o próprio domínio. Entrega na caixa de
+entrada, mas o endereço fica técnico e o Brevo acrescenta link de descadastro.
+Com domínio próprio isso desaparece.
+
+### Diagnóstico
+
+```sql
+select status_code, content, created
+from net._http_response order by created desc limit 5;
 ```
-E no SQL Editor, uma vez: `select vault.create_secret('<service_role>', 'project_service_role_key');`
-— é com ele que o pg_cron se autentica na função.
 
-Quando houver domínio próprio, migrar para Resend ou para envio pelo próprio
-domínio é trocar variáveis, não reescrever a função.
+| Resposta | Significado |
+|---|---|
+| `404` | função não implantada, ou nome diferente de `notify-guide` |
+| `401` | JWT do vault inválido |
+| `500` `missing_env` | falta `BREVO_API_KEY` ou `MAIL_FROM` |
+| `503` corpo nulo | worker morreu — foi assim que o denomailer falhava |
+| `200` com `failures` | rodou e o Brevo recusou; o motivo está no array |
+| `200` sem `failures` | nada pendente, tudo carimbado |
+
+Migrar de provedor é trocar URL, cabeçalho de autenticação e formato do corpo
+em `sendEmail()`. O resto não muda.
 
 ## Arquivos
 
