@@ -183,7 +183,9 @@ const createInvite = async () => {
     return
   }
 
-  lastInviteLink.value = `${window.location.origin}/painel/entrar?convite=${data.token}`
+  // Token no caminho, não em query string: o retorno do OAuth descartava a
+  // query e o convite se perdia.
+  lastInviteLink.value = `${window.location.origin}/convite/${data.token}`
   inviteEmail.value = ''
   inviteNote.value = ''
   await load()

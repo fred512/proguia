@@ -50,7 +50,7 @@ export default defineNuxtConfig({
       // O painel depende de sessão e de dados do banco: servir a home do cache
       // no lugar dele fazia o Nuxt hidratar na rota errada. Foi o que engolia
       // o `?convite=` do link de convite antes do onMounted guardá-lo.
-      navigateFallbackDenylist: [/^\/painel/],
+      navigateFallbackDenylist: [/^\/painel/, /^\/convite/],
       // Sem isto, `/anfitriao/x?algo=1` não casa com `/anfitriao/x` no
       // precache e cai no fallback.
       ignoreURLParametersMatching: [/.*/],

@@ -2,6 +2,7 @@
   "buildCommand": "pnpm generate",
   "outputDirectory": ".output/public",
   "rewrites": [
-    { "source": "/anfitriao/:slug", "destination": "/200.html" }
+    { "source": "/anfitriao/:slug", "destination": "/200.html" },
+    { "source": "/convite/:token", "destination": "/200.html" }
   ]
 }
