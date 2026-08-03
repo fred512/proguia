@@ -34,7 +34,7 @@ A página `/` tem os três roteiros hardcoded em `pages/index.vue`, texto e foto
 |---|---|
 | Supabase | projeto `PersonalTravel`, ref `xzzdwlnncfibmtdbxrcp`, região `sa-east-1` |
 | Conta Supabase | `carlosfredericodemborges@gmail.com` — **não** a `fred512`, que tem ProTarefa e Provisiona |
-| Resend | conta `fredborges512`, chave `ProGuia` com Sending access |
+| E-mail | SMTP do Gmail, conta `personaltravel1br@gmail.com` (sem domínio próprio) |
 | Hospedagem | Vercel, saída estática |
 
 ### Variáveis
@@ -63,6 +63,8 @@ Migrações em `supabase/migrations/`, todas aplicadas:
 | `..210000_guide_photos_storage` | bucket `guide-photos` + policies |
 | `..220000_admin_and_invites` | `platform_admins`, `guide_invites`, RPCs |
 | `..230000_host_slug` | `slugify()` e geração automática de slug |
+| `20260802100000_host_applications` | candidatura pública + RPC com trava de flood |
+| `20260802120000_client_notification` | `client_notified_at` em `requests` |
 
 ### Decisões de segurança que não devem ser desfeitas
 
@@ -100,18 +102,42 @@ Busque por ponto turístico, não por cidade: "Foz do Iguaçu" devolve posto de 
 
 A API do Commons aceita `origin=*`, então a busca roda no navegador. Sem servidor, sem chave, sem custo. Geração de imagem por IA foi descartada: erra lugares reais e identificáveis, o que encosta em publicidade enganosa.
 
-## E-mail (escrito, não ativado)
+## E-mail
 
-`supabase/functions/notify-guide/index.ts` varre `requests` com `notified_at is null`, envia pelo Resend e carimba depois do envio aceito — pior caso é e-mail repetido, nunca pedido silenciado.
+`supabase/functions/notify-guide/index.ts` envia dois e-mails por solicitação:
+ao **anfitrião** (novo pedido, com contato do cliente) e ao **cliente**
+(confirmação de recebimento). Cada um tem carimbo próprio — `notified_at` e
+`client_notified_at` — porque falham de forma independente; com um carimbo só,
+uma falha no segundo geraria reenvio duplicado do primeiro.
 
-Falta para funcionar:
+Envia por **SMTP do Gmail**, não pela API do Resend. Motivo: SMTP do Gmail não
+exige domínio verificado, porque a assinatura SPF/DKIM é do google.com e a
+conta é nossa. Custo zero. O Resend exigiria domínio próprio, e o remetente
+sandbox dele só entrega no e-mail dono da conta.
+
+Conta remetente: `personaltravel1br@gmail.com`, com verificação em duas etapas
+e senha de app.
+
+O remetente do e-mail ao anfitrião usa nome exibido composto —
+`Marina Costa (via PersonalTravel) <personaltravel1br@gmail.com>` — porque só
+podemos assinar mensagens do endereço que controlamos. `replyTo` aponta para o
+cliente, então responder tira a plataforma do meio.
+
+Uma conexão SMTP por rodada, não por mensagem: o Gmail estrangula a conta com
+excesso de handshakes.
+
+Ativar:
 ```bash
 npx supabase functions deploy notify-guide
-npx supabase secrets set RESEND_API_KEY=re_...
+npx supabase secrets set GMAIL_USER=personaltravel1br@gmail.com
+npx supabase secrets set GMAIL_APP_PASSWORD='<senha de app, 16 caracteres>'
 ```
-E no SQL Editor: `select vault.create_secret('<service_role>', 'project_service_role_key');`
+E no SQL Editor, uma vez: `select vault.create_secret('<service_role>', 'project_service_role_key');`
+— é com ele que o pg_cron se autentica na função.
 
-Limitação: com o remetente sandbox `onboarding@resend.dev`, o Resend só entrega no e-mail dono da conta. Enviar para o anfitrião exige domínio verificado e `RESEND_FROM`.
+Limite do Gmail: cerca de 500 e-mails por dia. Irrelevante nesta escala.
+Quando houver domínio próprio, migrar para Resend é trocar variáveis, não
+reescrever a função.
 
 ## Arquivos
 
