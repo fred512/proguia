@@ -4,18 +4,17 @@
 // carimbo e só é feito quando o carimbo está nulo, então falha de rede vira
 // retentativa no ciclo seguinte em vez de e-mail perdido ou duplicado.
 //
-// Envia por SMTP genérico, configurado por variáveis de ambiente. Escolhemos
-// SMTP em vez da API do Resend porque o Resend exige domínio próprio
-// verificado, e ainda não temos domínio.
+// Envia pela API HTTP do Brevo, não por SMTP. A tentativa com denomailer
+// falhava em "invalid cmd at SMTPConnection.assertCode": o runtime das Edge
+// Functions não completa o diálogo STARTTLS em TCP cru. A API é fetch comum,
+// que o runtime faz bem.
 //
-// Funciona com qualquer provedor que aceite remetente sem domínio próprio:
-//   Brevo    smtp-relay.brevo.com:587   (verifica um e-mail avulso)
-//   Gmail    smtp.gmail.com:465          (exige 2FA e senha de app)
-//   Mailjet  in-v3.mailjet.com:587
-// Trocar de provedor é trocar variáveis, não código.
+// Migrar para outro provedor (Resend, Mailjet) é trocar a URL, o cabeçalho de
+// autenticação e o formato do corpo em sendEmail(). O resto não muda.
 
 import { createClient } from 'jsr:@supabase/supabase-js@2'
-import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts'
+
+const BREVO_ENDPOINT = 'https://api.brevo.com/v3/smtp/email'
 
 const money = (value: number) =>
   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(value))
@@ -30,8 +29,7 @@ const escapeHtml = (value: string) =>
   String(value ?? '').replace(/[&<>"']/g, (c) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string))
 
-// O nome exibido não pode conter aspas ou quebras: viraria injeção de cabeçalho.
-const safeDisplayName = (value: string) =>
+const safeName = (value: string) =>
   String(value ?? '').replace(/["\r\n<>]/g, '').trim().slice(0, 60)
 
 const shell = (title: string, body: string) => `
@@ -55,17 +53,43 @@ const detailRows = (request: any) => `
 Deno.serve(async () => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
   const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
-  const smtpHost = Deno.env.get('SMTP_HOST')
-  const smtpPort = Number(Deno.env.get('SMTP_PORT') ?? '587')
-  const smtpUser = Deno.env.get('SMTP_USER')
-  const smtpPassword = Deno.env.get('SMTP_PASSWORD')
-  // Em provedores de relay o usuário de login não é o remetente: o Brevo
-  // autentica com um identificador próprio e envia pelo e-mail verificado.
-  const mailFrom = Deno.env.get('MAIL_FROM') ?? smtpUser
+  const brevoKey = Deno.env.get('BREVO_API_KEY')
+  const mailFrom = Deno.env.get('MAIL_FROM')
   const brand = Deno.env.get('MAIL_FROM_NAME') ?? 'PersonalTravel'
 
-  if (!supabaseUrl || !serviceRoleKey || !smtpHost || !smtpUser || !smtpPassword || !mailFrom) {
+  if (!supabaseUrl || !serviceRoleKey || !brevoKey || !mailFrom) {
     return new Response(JSON.stringify({ error: 'missing_env' }), { status: 500 })
+  }
+
+  // Lança em falha para o chamador registrar em `failures` e tentar de novo no
+  // próximo ciclo — o carimbo só é gravado depois que isto retorna sem erro.
+  const sendEmail = async (payload: {
+    toEmail: string
+    toName?: string
+    fromName: string
+    replyTo: string
+    subject: string
+    html: string
+  }) => {
+    const response = await fetch(BREVO_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'api-key': brevoKey,
+        'Content-Type': 'application/json',
+        accept: 'application/json'
+      },
+      body: JSON.stringify({
+        sender: { name: safeName(payload.fromName), email: mailFrom },
+        to: [{ email: payload.toEmail, name: payload.toName ? safeName(payload.toName) : undefined }],
+        replyTo: { email: payload.replyTo },
+        subject: payload.subject,
+        htmlContent: payload.html
+      })
+    })
+
+    if (!response.ok) {
+      throw new Error(`brevo ${response.status}: ${(await response.text()).slice(0, 300)}`)
+    }
   }
 
   const supabase = createClient(supabaseUrl, serviceRoleKey)
@@ -80,102 +104,85 @@ Deno.serve(async () => {
   if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500 })
   if (!pending?.length) return new Response(JSON.stringify({ host: 0, client: 0 }), { status: 200 })
 
-  // Uma conexão para toda a rodada: abrir uma por mensagem faz os provedores
-  // estrangularem a conta por excesso de handshakes.
-  // Porta 465 fala TLS desde o handshake; 587 começa em claro e sobe para TLS
-  // com STARTTLS, que o denomailer negocia sozinho quando tls é falso.
-  const smtp = new SMTPClient({
-    connection: {
-      hostname: smtpHost,
-      port: smtpPort,
-      tls: smtpPort === 465,
-      auth: { username: smtpUser, password: smtpPassword }
-    }
-  })
-
   let hostSent = 0
   let clientSent = 0
   const failures: Array<{ id: string, target: string, reason: string }> = []
 
-  try {
-    for (const request of pending) {
-      const host = request.guides as unknown as { name: string, email: string | null } | null
+  for (const request of pending) {
+    const host = request.guides as unknown as { name: string, email: string | null } | null
 
-      // --- anfitrião ---
-      if (!request.notified_at) {
-        if (!host?.email) {
-          failures.push({ id: request.id, target: 'host', reason: 'anfitrião sem e-mail cadastrado' })
-        } else {
-          try {
-            await smtp.send({
-              // O nome exibido carrega quem pediu; o endereço permanece o nosso,
-              // porque só podemos assinar mensagens do domínio que controlamos.
-              from: `${safeDisplayName(request.client_name)} (via ${brand}) <${mailFrom}>`,
-              to: host.email,
-              replyTo: request.client_email,
-              subject: `Nova solicitação — ${request.route_title}`,
-              content: 'auto',
-              html: shell('Nova solicitação', `
-                <h2 style="margin:4px 0 16px;">${escapeHtml(request.client_name)}</h2>
-                <p style="margin:0 0 14px;font-size:14px;">
-                  ${escapeHtml(request.client_email)}<br>${escapeHtml(request.client_phone)}
-                </p>
-                ${detailRows(request)}
-                <p style="color:#65706b;font-size:13px;margin-top:18px;">
-                  Responda este e-mail para falar direto com a pessoa.
-                </p>`)
-            })
-
-            const { error: stampError } = await supabase
-              .from('requests')
-              .update({ notified_at: new Date().toISOString() })
-              .eq('id', request.id)
-
-            if (stampError) failures.push({ id: request.id, target: 'host', reason: `stamp: ${stampError.message}` })
-            hostSent += 1
-          } catch (sendError) {
-            failures.push({ id: request.id, target: 'host', reason: String(sendError) })
-          }
-        }
-      }
-
-      // --- cliente ---
-      if (!request.client_notified_at) {
+    // --- anfitrião ---
+    if (!request.notified_at) {
+      if (!host?.email) {
+        failures.push({ id: request.id, target: 'host', reason: 'anfitrião sem e-mail cadastrado' })
+      } else {
         try {
-          await smtp.send({
-            from: `${brand} <${mailFrom}>`,
-            to: request.client_email,
-            // Responder chega no anfitrião, para a conversa seguir sem o painel.
-            replyTo: host?.email ?? mailFrom,
-            subject: `Recebemos seu pedido — ${request.route_title}`,
-            content: 'auto',
-            html: shell('Pedido recebido', `
-              <h2 style="margin:4px 0 16px;">Obrigado, ${escapeHtml(request.client_name.split(' ')[0] ?? '')}!</h2>
+          await sendEmail({
+            toEmail: host.email,
+            toName: host.name,
+            // O nome exibido carrega quem pediu; o endereço permanece o nosso,
+            // porque só podemos enviar do remetente verificado no Brevo.
+            fromName: `${request.client_name} (via ${brand})`,
+            replyTo: request.client_email,
+            subject: `Nova solicitação — ${request.route_title}`,
+            html: shell('Nova solicitação', `
+              <h2 style="margin:4px 0 16px;">${escapeHtml(request.client_name)}</h2>
               <p style="margin:0 0 14px;font-size:14px;">
-                ${escapeHtml(host?.name ?? 'Seu anfitrião')} recebeu seu pedido e vai responder neste e-mail
-                com uma proposta ajustada ao seu grupo.
+                ${escapeHtml(request.client_email)}<br>${escapeHtml(request.client_phone)}
               </p>
               ${detailRows(request)}
               <p style="color:#65706b;font-size:13px;margin-top:18px;">
-                O valor acima é uma estimativa a partir do roteiro escolhido. A proposta final pode variar
-                conforme o que for combinado. Transporte ainda não está incluso.
+                Responda este e-mail para falar direto com a pessoa.
               </p>`)
           })
 
           const { error: stampError } = await supabase
             .from('requests')
-            .update({ client_notified_at: new Date().toISOString() })
+            .update({ notified_at: new Date().toISOString() })
             .eq('id', request.id)
 
-          if (stampError) failures.push({ id: request.id, target: 'client', reason: `stamp: ${stampError.message}` })
-          clientSent += 1
+          if (stampError) failures.push({ id: request.id, target: 'host', reason: `stamp: ${stampError.message}` })
+          hostSent += 1
         } catch (sendError) {
-          failures.push({ id: request.id, target: 'client', reason: String(sendError) })
+          failures.push({ id: request.id, target: 'host', reason: String(sendError) })
         }
       }
     }
-  } finally {
-    await smtp.close()
+
+    // --- cliente ---
+    if (!request.client_notified_at) {
+      try {
+        await sendEmail({
+          toEmail: request.client_email,
+          toName: request.client_name,
+          fromName: brand,
+          // Responder chega no anfitrião, para a conversa seguir sem o painel.
+          replyTo: host?.email ?? mailFrom,
+          subject: `Recebemos seu pedido — ${request.route_title}`,
+          html: shell('Pedido recebido', `
+            <h2 style="margin:4px 0 16px;">Obrigado, ${escapeHtml(request.client_name.split(' ')[0] ?? '')}!</h2>
+            <p style="margin:0 0 14px;font-size:14px;">
+              ${escapeHtml(host?.name ?? 'Seu anfitrião')} recebeu seu pedido e vai responder neste e-mail
+              com uma proposta ajustada ao seu grupo.
+            </p>
+            ${detailRows(request)}
+            <p style="color:#65706b;font-size:13px;margin-top:18px;">
+              O valor acima é uma estimativa a partir do roteiro escolhido. A proposta final pode variar
+              conforme o que for combinado. Transporte ainda não está incluso.
+            </p>`)
+        })
+
+        const { error: stampError } = await supabase
+          .from('requests')
+          .update({ client_notified_at: new Date().toISOString() })
+          .eq('id', request.id)
+
+        if (stampError) failures.push({ id: request.id, target: 'client', reason: `stamp: ${stampError.message}` })
+        clientSent += 1
+      } catch (sendError) {
+        failures.push({ id: request.id, target: 'client', reason: String(sendError) })
+      }
+    }
   }
 
   return new Response(JSON.stringify({ host: hostSent, client: clientSent, failures }), {
