@@ -45,7 +45,10 @@ export default defineNuxtConfig({
     },
     workbox: {
       globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,json,webmanifest}'],
-      globIgnores: ['**/404.html'],
+      // 200.html e 404.html são cascas que a Vercel serve por reescrita, não
+      // rotas. O Workbox tentava pré-cachear /200 e /404 e recebia 404,
+      // abortando a instalação do service worker.
+      globIgnores: ['**/404.html', '**/200.html'],
       navigateFallback: '/',
       // O painel depende de sessão e de dados do banco: servir a home do cache
       // no lugar dele fazia o Nuxt hidratar na rota errada. Foi o que engolia
