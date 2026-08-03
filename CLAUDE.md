@@ -110,13 +110,25 @@ ao **anfitrião** (novo pedido, com contato do cliente) e ao **cliente**
 `client_notified_at` — porque falham de forma independente; com um carimbo só,
 uma falha no segundo geraria reenvio duplicado do primeiro.
 
-Envia por **SMTP do Gmail**, não pela API do Resend. Motivo: SMTP do Gmail não
-exige domínio verificado, porque a assinatura SPF/DKIM é do google.com e a
-conta é nossa. Custo zero. O Resend exigiria domínio próprio, e o remetente
-sandbox dele só entrega no e-mail dono da conta.
+Envia por **SMTP genérico**, configurado por variáveis de ambiente, não pela
+API do Resend — o Resend exige domínio próprio verificado e ainda não temos
+domínio. Trocar de provedor é trocar variáveis, não código.
 
-Conta remetente: `personaltravel1br@gmail.com`, com verificação em duas etapas
-e senha de app.
+Provedores que aceitam remetente sem domínio próprio:
+
+| Provedor | Host | Porta | Observação |
+|---|---|---|---|
+| Brevo | `smtp-relay.brevo.com` | 587 | verifica um e-mail avulso; 300/dia grátis |
+| Gmail | `smtp.gmail.com` | 465 | exige 2FA e senha de app |
+| Mailjet | `in-v3.mailjet.com` | 587 | verifica remetente avulso |
+
+Remetente: `personaltravel1br@gmail.com`. A tentativa de usar SMTP do Gmail
+travou numa parede de verificação de identidade do Google — conta nova pedindo
+código para um telefone que não é o do titular. Por isso a função ficou
+agnóstica.
+
+Em provedores de relay o usuário de login **não** é o remetente: por isso
+existem `SMTP_USER` e `MAIL_FROM` separados.
 
 O remetente do e-mail ao anfitrião usa nome exibido composto —
 `Marina Costa (via PersonalTravel) <personaltravel1br@gmail.com>` — porque só
@@ -129,15 +141,17 @@ excesso de handshakes.
 Ativar:
 ```bash
 npx supabase functions deploy notify-guide
-npx supabase secrets set GMAIL_USER=personaltravel1br@gmail.com
-npx supabase secrets set GMAIL_APP_PASSWORD='<senha de app, 16 caracteres>'
+npx supabase secrets set SMTP_HOST=smtp-relay.brevo.com
+npx supabase secrets set SMTP_PORT=587
+npx supabase secrets set SMTP_USER=<login do provedor>
+npx supabase secrets set SMTP_PASSWORD=<senha do provedor>
+npx supabase secrets set MAIL_FROM=personaltravel1br@gmail.com
 ```
 E no SQL Editor, uma vez: `select vault.create_secret('<service_role>', 'project_service_role_key');`
 — é com ele que o pg_cron se autentica na função.
 
-Limite do Gmail: cerca de 500 e-mails por dia. Irrelevante nesta escala.
-Quando houver domínio próprio, migrar para Resend é trocar variáveis, não
-reescrever a função.
+Quando houver domínio próprio, migrar para Resend ou para envio pelo próprio
+domínio é trocar variáveis, não reescrever a função.
 
 ## Arquivos
 

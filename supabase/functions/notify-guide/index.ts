@@ -4,8 +4,15 @@
 // carimbo e só é feito quando o carimbo está nulo, então falha de rede vira
 // retentativa no ciclo seguinte em vez de e-mail perdido ou duplicado.
 //
-// Envia por SMTP do Gmail em vez de API do Resend: não exige domínio próprio
-// verificado, porque a assinatura SPF/DKIM é do google.com e a conta é nossa.
+// Envia por SMTP genérico, configurado por variáveis de ambiente. Escolhemos
+// SMTP em vez da API do Resend porque o Resend exige domínio próprio
+// verificado, e ainda não temos domínio.
+//
+// Funciona com qualquer provedor que aceite remetente sem domínio próprio:
+//   Brevo    smtp-relay.brevo.com:587   (verifica um e-mail avulso)
+//   Gmail    smtp.gmail.com:465          (exige 2FA e senha de app)
+//   Mailjet  in-v3.mailjet.com:587
+// Trocar de provedor é trocar variáveis, não código.
 
 import { createClient } from 'jsr:@supabase/supabase-js@2'
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts'
@@ -48,11 +55,16 @@ const detailRows = (request: any) => `
 Deno.serve(async () => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
   const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
-  const gmailUser = Deno.env.get('GMAIL_USER')
-  const gmailPassword = Deno.env.get('GMAIL_APP_PASSWORD')
+  const smtpHost = Deno.env.get('SMTP_HOST')
+  const smtpPort = Number(Deno.env.get('SMTP_PORT') ?? '587')
+  const smtpUser = Deno.env.get('SMTP_USER')
+  const smtpPassword = Deno.env.get('SMTP_PASSWORD')
+  // Em provedores de relay o usuário de login não é o remetente: o Brevo
+  // autentica com um identificador próprio e envia pelo e-mail verificado.
+  const mailFrom = Deno.env.get('MAIL_FROM') ?? smtpUser
   const brand = Deno.env.get('MAIL_FROM_NAME') ?? 'PersonalTravel'
 
-  if (!supabaseUrl || !serviceRoleKey || !gmailUser || !gmailPassword) {
+  if (!supabaseUrl || !serviceRoleKey || !smtpHost || !smtpUser || !smtpPassword || !mailFrom) {
     return new Response(JSON.stringify({ error: 'missing_env' }), { status: 500 })
   }
 
@@ -68,14 +80,16 @@ Deno.serve(async () => {
   if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500 })
   if (!pending?.length) return new Response(JSON.stringify({ host: 0, client: 0 }), { status: 200 })
 
-  // Uma conexão para toda a rodada: abrir uma por mensagem faz o Gmail
-  // estrangular a conta por excesso de handshakes.
+  // Uma conexão para toda a rodada: abrir uma por mensagem faz os provedores
+  // estrangularem a conta por excesso de handshakes.
+  // Porta 465 fala TLS desde o handshake; 587 começa em claro e sobe para TLS
+  // com STARTTLS, que o denomailer negocia sozinho quando tls é falso.
   const smtp = new SMTPClient({
     connection: {
-      hostname: 'smtp.gmail.com',
-      port: 465,
-      tls: true,
-      auth: { username: gmailUser, password: gmailPassword }
+      hostname: smtpHost,
+      port: smtpPort,
+      tls: smtpPort === 465,
+      auth: { username: smtpUser, password: smtpPassword }
     }
   })
 
@@ -96,7 +110,7 @@ Deno.serve(async () => {
             await smtp.send({
               // O nome exibido carrega quem pediu; o endereço permanece o nosso,
               // porque só podemos assinar mensagens do domínio que controlamos.
-              from: `${safeDisplayName(request.client_name)} (via ${brand}) <${gmailUser}>`,
+              from: `${safeDisplayName(request.client_name)} (via ${brand}) <${mailFrom}>`,
               to: host.email,
               replyTo: request.client_email,
               subject: `Nova solicitação — ${request.route_title}`,
@@ -129,10 +143,10 @@ Deno.serve(async () => {
       if (!request.client_notified_at) {
         try {
           await smtp.send({
-            from: `${brand} <${gmailUser}>`,
+            from: `${brand} <${mailFrom}>`,
             to: request.client_email,
             // Responder chega no anfitrião, para a conversa seguir sem o painel.
-            replyTo: host?.email ?? gmailUser,
+            replyTo: host?.email ?? mailFrom,
             subject: `Recebemos seu pedido — ${request.route_title}`,
             content: 'auto',
             html: shell('Pedido recebido', `
