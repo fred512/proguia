@@ -215,12 +215,23 @@ const removeGalleryItem = (index: number) => draft.gallery.splice(index, 1)
 
 const commonsTerm = ref('')
 const commonsOpen = ref(false)
+const commonsResultsEl = ref<HTMLElement | null>(null)
 
-const runCommonsSearch = () => searchCommons(commonsTerm.value)
+// Em tela estreita a grade nasce abaixo da dobra e passa despercebida.
+const revealResults = async () => {
+  await nextTick()
+  commonsResultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+}
 
-const useSuggestion = (term: string) => {
+const runCommonsSearch = async () => {
+  await searchCommons(commonsTerm.value)
+  await revealResults()
+}
+
+const useSuggestion = async (term: string) => {
   commonsTerm.value = term
-  return searchCommons(term)
+  await searchCommons(term)
+  await revealResults()
 }
 
 const addFromCommons = (item: CommonsImage) => {
@@ -318,24 +329,33 @@ const closeMenu = () => { menuOpen.value = false }
                   <button class="button button-outline button-small" type="button" :disabled="searching" @click="runCommonsSearch">{{ searching ? 'Buscando…' : 'Buscar' }}</button>
                 </div>
 
-                <p class="commons-hint">Busque pelo nome do ponto turístico, não da cidade — "Foz do Iguaçu" devolve posto de gasolina e ônibus urbano.</p>
-
-                <div class="commons-suggestions">
-                  <button v-for="term in COMMONS_SUGGESTIONS" :key="term" type="button" @click="useSuggestion(term)">{{ term }}</button>
-                </div>
-
                 <p v-if="searchError" class="commons-error">{{ searchError }}</p>
 
-                <div v-if="commonsResults.length" class="commons-results">
-                  <button v-for="item in commonsResults" :key="item.image" type="button" class="commons-result" @click="addFromCommons(item)">
-                    <img :src="item.thumb" :alt="item.title" loading="lazy">
-                    <span>{{ item.license }}</span>
-                  </button>
+                <!-- Resultados imediatamente abaixo do campo. As sugestões só
+                     servem antes da primeira busca; depois elas empurrariam a
+                     grade para fora da tela. -->
+                <div v-if="commonsResults.length" ref="commonsResultsEl">
+                  <p class="commons-count">{{ commonsResults.length }} foto(s) encontradas — clique para adicionar à galeria</p>
+
+                  <div class="commons-results">
+                    <button v-for="item in commonsResults" :key="item.image" type="button" class="commons-result" @click="addFromCommons(item)">
+                      <img :src="item.thumb" :alt="item.title" loading="lazy">
+                      <span>{{ item.license }}</span>
+                    </button>
+                  </div>
+
+                  <p class="commons-hint">
+                    As licenças do Commons exigem crédito ao autor. Ele é guardado junto com a foto e aparece na página pública.
+                  </p>
                 </div>
 
-                <p v-if="commonsResults.length" class="commons-hint">
-                  As licenças do Commons exigem crédito ao autor. Ele é guardado junto com a foto e aparece na página pública.
-                </p>
+                <template v-else>
+                  <p class="commons-hint">Busque pelo nome do ponto turístico, não da cidade — "Foz do Iguaçu" devolve posto de gasolina e ônibus urbano. Um hífen antes de um termo o exclui da busca.</p>
+
+                  <div class="commons-suggestions">
+                    <button v-for="term in COMMONS_SUGGESTIONS" :key="term" type="button" @click="useSuggestion(term)">{{ term }}</button>
+                  </div>
+                </template>
               </div>
             </div>
           </div>
@@ -478,6 +498,13 @@ const closeMenu = () => { menuOpen.value = false }
 }
 
 .commons-hint { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+.commons-count {
+  margin: 12px 0 0;
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 700;
+}
 
 .commons-error { margin: 8px 0 0; color: var(--coral); font-size: 12px; }
 
