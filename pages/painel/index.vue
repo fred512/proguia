@@ -64,7 +64,10 @@ const load = async () => {
       .select('id, route_title, package, client_name, client_email, client_phone, start_date, days, people, total_amount, status, created_at')
       .order('created_at', { ascending: false })
       .limit(50),
-    supabase.from('routes').select('id', { count: 'exact', head: true }).eq('active', true)
+    // Sem o filtro por dono, o RLS deixa ver roteiros ativos de anfitriões
+    // publicados e a contagem soma os dos outros.
+    supabase.from('routes').select('id', { count: 'exact', head: true })
+      .eq('guide_id', user.value.id).eq('active', true)
   ])
 
   loading.value = false

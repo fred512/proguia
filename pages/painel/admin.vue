@@ -56,6 +56,9 @@ const menuOpen = ref(false)
 
 const inviteEmail = ref('')
 const inviteNote = ref('')
+// Nome que a pessoa escreveu na candidatura. Vira o nome inicial do perfil,
+// em vez do apelido da conta do provedor.
+const inviteName = ref('')
 const creatingInvite = ref(false)
 const lastInviteLink = ref('')
 const copied = ref(false)
@@ -144,6 +147,7 @@ const updateApplication = async (application: ApplicationRow, status: string) =>
 const inviteApplicant = async (application: ApplicationRow) => {
   inviteEmail.value = application.email
   inviteNote.value = application.name
+  inviteName.value = application.name
   await updateApplication(application, 'invited')
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
@@ -173,7 +177,8 @@ const createInvite = async () => {
 
   const { data, error } = await supabase.rpc('create_guide_invite', {
     p_email: inviteEmail.value.trim() || null,
-    p_note: inviteNote.value.trim() || null
+    p_note: inviteNote.value.trim() || null,
+    p_name: inviteName.value.trim() || null
   })
 
   creatingInvite.value = false
@@ -188,6 +193,7 @@ const createInvite = async () => {
   lastInviteLink.value = `${window.location.origin}/convite/${data.token}`
   inviteEmail.value = ''
   inviteNote.value = ''
+  inviteName.value = ''
   await load()
 }
 
@@ -243,6 +249,7 @@ const closeMenu = () => { menuOpen.value = false }
           </div>
 
           <form class="invite-form" @submit.prevent="createInvite">
+            <label class="form-field">Nome (opcional)<input v-model="inviteName" type="text" placeholder="Como a pessoa quer ser chamada"></label>
             <label class="form-field">E-mail (opcional)<input v-model="inviteEmail" type="email" placeholder="Trava o convite a este e-mail"></label>
             <label class="form-field">Anotação (opcional)<input v-model="inviteNote" type="text" placeholder="Para lembrar quem é"></label>
             <button class="button button-lime" type="submit" :disabled="creatingInvite">{{ creatingInvite ? 'Gerando…' : 'Gerar link' }}</button>
@@ -350,7 +357,7 @@ const closeMenu = () => { menuOpen.value = false }
 
 .invite-form {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr auto;
   gap: 14px;
   align-items: end;
   margin-bottom: 16px;
