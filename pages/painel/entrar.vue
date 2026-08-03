@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const route = useRoute()
-const { user, isAdmin, hasGuideProfile, inviteError, init, rememberInvite, signInWithEmail, signInWithGoogle } = useAuth()
+const { user, isAdmin, hasGuideProfile, inviteError, init, rememberInvite, pendingInvite, redeemPendingInvite, signInWithEmail, signInWithGoogle } = useAuth()
+
+// Distingue "nenhum token chegou" de "o banco recusou o token" — sem isso os
+// dois casos produzem a mesma tela e não dá para saber onde olhar.
+const tokenFound = ref(false)
 
 const email = ref('')
 const sending = ref(false)
@@ -18,7 +22,22 @@ onMounted(async () => {
   noInvite.value = route.query['sem-convite'] === '1'
 
   await init()
-  if (user.value && (hasGuideProfile.value || isAdmin.value)) await navigateTo('/painel')
+
+  if (user.value && (hasGuideProfile.value || isAdmin.value)) {
+    await navigateTo('/painel')
+    return
+  }
+
+  // O retorno do OAuth pode cair aqui em vez de /painel, dependendo de como o
+  // Supabase resolve o redirect. Então esta tela também tenta resgatar, em vez
+  // de depender só do middleware.
+  if (user.value) {
+    tokenFound.value = Boolean(inviteToken.value || pendingInvite())
+    if (tokenFound.value) {
+      await redeemPendingInvite(inviteToken.value)
+      if (hasGuideProfile.value) await navigateTo('/painel')
+    }
+  }
 })
 
 const submitEmail = async () => {
@@ -67,7 +86,12 @@ const submitGoogle = async () => {
       </p>
 
       <p v-if="noInvite && !inviteError" class="login-error" role="alert">
-        Sua conta foi criada, mas não há convite associado a ela. O cadastro no PersonalTravel é feito por convite — peça o link a quem administra a plataforma.
+        <template v-if="tokenFound">
+          O convite foi encontrado mas não pôde ser aplicado. Abra o link novamente nesta mesma janela.
+        </template>
+        <template v-else>
+          Sua conta foi criada, mas <strong>nenhum convite chegou junto com ela</strong>. Abra o link que você recebeu — ele precisa ser aberto no mesmo navegador em que você faz o login. Se não tiver o link, peça outro a quem administra a plataforma.
+        </template>
       </p>
 
       <div v-if="sent" class="login-sent" role="status">

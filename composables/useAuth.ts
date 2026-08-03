@@ -45,16 +45,31 @@ export const useAuth = () => {
     ready.value = true
   }
 
-  // O token fica em localStorage porque o login por Google sai da página: o
-  // parâmetro da URL não sobrevive à ida e volta pelo provedor.
+  // Três canais porque o login por Google sai da página e volta, e cada canal
+  // falha num cenário diferente: cookie sobrevive à navegação de topo vinda do
+  // provedor, localStorage sobrevive a recarregamento, e a URL cobre o caso de
+  // o navegador descartar os dois.
+  const inviteCookie = () =>
+    useCookie<string | null>(INVITE_STORAGE_KEY, {
+      maxAge: 60 * 30,
+      sameSite: 'lax',
+      path: '/'
+    })
+
   const rememberInvite = (token: string) => {
-    if (import.meta.client && token) window.localStorage.setItem(INVITE_STORAGE_KEY, token)
+    if (!token) return
+    inviteCookie().value = token
+    if (import.meta.client) window.localStorage.setItem(INVITE_STORAGE_KEY, token)
   }
 
-  const pendingInvite = () =>
-    import.meta.client ? window.localStorage.getItem(INVITE_STORAGE_KEY) : null
+  const pendingInvite = () => {
+    const fromCookie = inviteCookie().value
+    if (fromCookie) return fromCookie
+    return import.meta.client ? window.localStorage.getItem(INVITE_STORAGE_KEY) : null
+  }
 
   const forgetInvite = () => {
+    inviteCookie().value = null
     if (import.meta.client) window.localStorage.removeItem(INVITE_STORAGE_KEY)
   }
 
