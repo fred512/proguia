@@ -16,6 +16,7 @@ const profile = reactive({
 })
 
 const published = ref(false)
+const slug = ref<string | null>(null)
 const loading = ref(true)
 const saving = ref(false)
 const saved = ref(false)
@@ -36,7 +37,7 @@ const loadProfile = async () => {
 
   const { data, error } = await supabase
     .from('guides')
-    .select('name, email, phone, languages, region, group_limit, bio, photo_url, published')
+    .select('name, email, phone, languages, region, group_limit, bio, photo_url, published, slug')
     .eq('id', user.value.id)
     .single()
 
@@ -56,6 +57,7 @@ const loadProfile = async () => {
   profile.bio = data.bio ?? ''
   profile.photoUrl = data.photo_url ?? ''
   published.value = data.published ?? false
+  slug.value = data.slug ?? null
 }
 
 onMounted(loadProfile)
@@ -209,7 +211,9 @@ const removePhoto = async () => {
 
       <p v-if="loading" class="profile-loading">Carregando seu perfil…</p>
 
-      <form v-else class="profile-editor" @submit.prevent="saveProfile">
+      <PublicLinkCard v-if="!loading" :slug="slug" :published="published" />
+
+      <form v-if="!loading" class="profile-editor" @submit.prevent="saveProfile">
         <aside class="profile-summary">
           <button class="profile-photo photo-button" type="button" :disabled="uploadingPhoto" :aria-label="profile.photoUrl ? 'Trocar foto de perfil' : 'Enviar foto de perfil'" @click="pickPhoto">
             <img v-if="profile.photoUrl" :src="profile.photoUrl" :alt="profile.name">

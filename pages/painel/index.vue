@@ -28,6 +28,7 @@ const STATUS_LABELS: Record<string, string> = {
 }
 
 const hostName = ref('')
+const hostSlug = ref<string | null>(null)
 const published = ref(false)
 const requests = ref<RequestRow[]>([])
 const routeCount = ref(0)
@@ -59,7 +60,7 @@ const load = async () => {
   if (!user.value) return
 
   const [profileResult, requestsResult, routesResult] = await Promise.all([
-    supabase.from('guides').select('name, published').eq('id', user.value.id).maybeSingle(),
+    supabase.from('guides').select('name, slug, published').eq('id', user.value.id).maybeSingle(),
     supabase.from('requests')
       .select('id, route_title, package, client_name, client_email, client_phone, start_date, days, people, total_amount, status, created_at')
       .order('created_at', { ascending: false })
@@ -79,6 +80,7 @@ const load = async () => {
   }
 
   hostName.value = profileResult.data?.name ?? ''
+  hostSlug.value = profileResult.data?.slug ?? null
   published.value = profileResult.data?.published ?? false
   requests.value = (requestsResult.data ?? []) as RequestRow[]
   routeCount.value = routesResult.count ?? 0
@@ -138,6 +140,8 @@ const closeMenu = () => { menuOpen.value = false }
       <p v-if="loading" class="admin-loading">Carregando…</p>
 
       <template v-else>
+        <PublicLinkCard :slug="hostSlug" :published="published" />
+
         <div class="metric-grid">
           <article><span>Solicitações novas</span><strong>{{ newCount }}</strong><small>de {{ requests.length }} recebidas</small></article>
           <article><span>Roteiros ativos</span><strong>{{ routeCount }}</strong><small><NuxtLink to="/painel/roteiros">gerenciar</NuxtLink></small></article>
