@@ -60,6 +60,22 @@ const creatingInvite = ref(false)
 const lastInviteLink = ref('')
 const copied = ref(false)
 
+// As colunas guardam o valor cru do banco; a tela mostra em português.
+const APPLICATION_LABELS: Record<string, string> = {
+  new: 'nova',
+  contacted: 'em contato',
+  invited: 'convidado',
+  declined: 'recusado'
+}
+
+const REQUEST_LABELS: Record<string, string> = {
+  new: 'nova',
+  contacted: 'em contato',
+  confirmed: 'confirmada',
+  declined: 'recusada',
+  archived: 'arquivada'
+}
+
 const money = (value: number) =>
   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(Number(value))
 
@@ -214,7 +230,7 @@ const closeMenu = () => { menuOpen.value = false }
 
       <template v-else>
         <div class="metric-grid">
-          <article><span>Guias publicados</span><strong>{{ publishedCount }}</strong><small>de {{ guides.length }} cadastrados</small></article>
+          <article><span>Anfitriões publicados</span><strong>{{ publishedCount }}</strong><small>de {{ guides.length }} cadastrados</small></article>
           <article><span>Solicitações novas</span><strong>{{ openRequests }}</strong><small>aguardando contato</small></article>
           <article><span>Em aberto</span><strong>{{ money(pipeline) }}</strong><small>soma das não recusadas</small></article>
         </div>
@@ -263,7 +279,7 @@ const closeMenu = () => { menuOpen.value = false }
                 <small v-if="application.message" class="app-message">{{ application.message }}</small>
               </span>
               <span>{{ application.region || '—' }}<small>{{ shortDate(application.created_at) }}</small></span>
-              <span class="status" :class="application.status">{{ application.status }}</span>
+              <span class="status" :class="application.status">{{ APPLICATION_LABELS[application.status] ?? application.status }}</span>
               <span class="route-actions">
                 <button v-if="application.status !== 'invited'" class="text-button" type="button" @click="inviteApplicant(application)">Convidar</button>
                 <button v-if="application.status === 'new'" class="text-button" type="button" @click="updateApplication(application, 'contacted')">Em contato</button>
@@ -309,7 +325,7 @@ const closeMenu = () => { menuOpen.value = false }
               <span>{{ guideName(request.guide_id) }}</span>
               <span>{{ request.route_title }}</span>
               <b>{{ money(request.total_amount) }}</b>
-              <span class="status" :class="request.status">{{ request.status }}</span>
+              <span class="status" :class="request.status">{{ REQUEST_LABELS[request.status] ?? request.status }}</span>
             </div>
           </div>
         </section>
@@ -376,6 +392,13 @@ const closeMenu = () => { menuOpen.value = false }
   margin-top: 4px;
   font-style: italic;
   line-height: 1.4;
+}
+
+/* Sem isto o `small` fica na mesma linha do texto acima e cola nele —
+   "Vitoria-Es03 de ago." em vez de duas linhas. */
+.table-row-apps span > small {
+  display: block;
+  margin-top: 2px;
 }
 
 .route-actions { display: flex; flex-wrap: wrap; gap: 10px; }
